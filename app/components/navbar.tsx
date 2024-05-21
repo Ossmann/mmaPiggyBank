@@ -9,8 +9,8 @@ export default function Navbar() {
     { href: '/placement', label: 'My WIL' },
     { href: '/skills', label: 'My Technical Skills' },
     { href: '/ethics', label: 'My Ethics' },
-    { href: '/blog', label: 'My Extra-Curricular' },
-    { href: '/faq', label: 'About Me' },
+    { href: '/extra', label: 'My Extra-Curricular' },
+    { href: '/me', label: 'About Me' },
   ];
 
   return (
