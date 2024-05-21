@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} relative h-screen`}>
+        {/* Background image */}
+        <div className="absolute inset-0 z-[-1] h-full">
+          <Image
+            src="/ian-dooley-ZLBzMGle-nE-unsplash.jpg"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            alt="Background Image"
+          />
+        </div>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-white opacity-50 z-[-1] h-full"></div>
+        
+        <div className="relative z-10">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
