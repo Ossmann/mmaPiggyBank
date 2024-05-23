@@ -20,7 +20,7 @@ export default function Skills() {
               My Technical Skills
             </div>
 
-            <p>In the present section I will describe the technical skills I was able to hone throughout my WIL Placement. For each technical skill I will apply the CARL (Context, Action, Result, Learning) reflective framework to showcase what I have learned. I will also lay out how each technical skills I worked on during my placement. I am happy I had to opportunity to develop new skills in a variety of areas such as apples VisionOS framework, the web-development framework nextjs and Generative Artificial Intelligence development through my WIL Placement.</p>
+            <p>In the present section I will describe the technical skills I was able to hone through my work integrated learning placement. For each technical skill I will apply the CARL (Context, Action, Result, Learning) reflective framework to showcase what I have learned. I will also lay out how each technical skills I worked on during my placement. I am happy I had to opportunity to develop new skills in a variety of areas such as apples VisionOS framework, the web-development framework nextjs and Generative Artificial Intelligence development through my WIL Placement.</p>
 
         <div className='py-4'>
         <ul className="space-y-4">
@@ -51,6 +51,14 @@ export default function Skills() {
             <Link href="#headline4" passHref>
               <div className="flex items-center text-black font-semibold hover:underline cursor-pointer" id="headline1">
                 ChatGPT AI API
+                <ChevronDownIcon className="w-5 h-5 ml-1" />
+              </div>
+            </Link>
+          </li>
+          <li>
+            <Link href="#headline5" passHref>
+              <div className="flex items-center text-black font-semibold hover:underline cursor-pointer" id="headline1">
+                7822ICT Reflection
                 <ChevronDownIcon className="w-5 h-5 ml-1" />
               </div>
             </Link>
@@ -222,13 +230,38 @@ export default function Skills() {
               <source src="/AIChatbot.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-                  <p className="caption text-xs italic text-center mt-4">
+                  <p className="caption text-xs italic text-center mt-4 " id='headline5'>
                     Integration of the OpenAI API into my <br />
                     AI Chatbot as Culture Software Group sales consultant
                   </p>
                 </div>
               </div>
 
+
+              <div className='text-xl font-semibold pt-6' >
+            Reflection for 7822ICT
+            </div>
+
+            <div className='underline font-medium py-3'>
+            How my learning changed through my graduate studies
+            </div>
+
+            <p>The way I acquire new knowledge and new skills as changed significantly over time. My undergraduate studies have been in social sciences where the study processes is centred very much on the critical discussion of literature. This helped my to evaluate scientific papers related to new technical developments during my graduate studies. At the same time however, the learning process required for a technical degree differs significantly as it is very important to develop the skill to follow step-by-step technical instructions in a detailed way. Furthermore, I had to develop advanced skills in fixing technical problems on my own by doing my own research. At my previous jobs where I was working on technical projects I always had a mentor or senior developer to help me and give me feedback. During my masters I had limited access to professors and tutors but most of the time I had to solve technical challenges by myself.  I had to develop the ability to understand and apply complex technical documentations by myself. I started to enjoy actively learning new technologies, continued to learn by myself during my placement and will continue to do so in my future career.</p>
+
+            <p className='py-2'>Additionally, the scope of technical issues I was faced with during my studies required me to develop the ability to connect different domains: from front-end development to back and data-base management and network security or business analysis.</p>
+
+            <p>In particular I developed 2 new critical workplace skills compared to my time as an undergraduate student:</p>
+
+            <div className='underline font-medium py-3'>
+            Complex Problem Solving
+            </div>
+            <p>The abilities I developed during my graduate studies helped me during my placement as I was able to develop new products with new technologies that no one at fluxguide was an expert in. Two years ago before I had started my masters I would have never believed that I would be able to learn a new 3D platform in VisionOS and a new web-development framework by myself in 3 months while delivering professionals products. As mentioned, no developer in fluxguide was an expert in those technologies. For example when building the new AR model in Vision Pro with 3D objects, the still immature documentation did not explain how to implement shaders effectively to light new objects adequately. This posed a significant challenge to me and the CTO was not able to help me either. I experimented with various approaches and read every developer forum on the subject I could find. In the end I managed to develop a shader mask that worked by mapping an image file with a black dot on my model. </p>
+
+            <div className='underline font-medium py-3'>
+            Decision Making
+            </div>
+
+            <p>When I first started trying to build technical projects I would try to build a working solution as quickly as possible and often times I would get discouraged or loose my nerve if I would not be able to develop a solution immediately. Throughout my graduate studies I was able to work on projects without the immediate pressure to need to publish. Instead, projects were drawn out over the course of a semester and holistic learning was actively promoted. This approach increased my confidence in taking a step back when facing difficult decisions and to decide for the sustainable long-term solution instead of a quick and dirty fix. In the past, at work I would sometimes get in trouble by taking a rushed decision under pressure. Now, during my placement I was able to keep calm and focus on the long-term result to successfully deliver high-quality solutions thanks to my graduate study experience.</p>
 
           </div>
         </div>
