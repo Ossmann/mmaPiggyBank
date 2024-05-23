@@ -132,8 +132,8 @@ export default function Skills() {
             <div className='py-12 flex justify-center'>
               <div className='flex flex-col items-center mr-8'>
                 <Image
-                  src="/VisionOS.jpg"
-                  alt="VisionOS"
+                  src="/VisionOs.jpg"
+                  alt="VisionOS canvases"
                   width={500}
                   height={500}
                 />
