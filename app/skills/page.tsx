@@ -49,7 +49,7 @@ export default function Skills() {
           </li>
           <li>
             <Link href="#headline4" passHref>
-              <div className="flex items-center text-black font-semibold hover:underline cursor-pointer">
+              <div className="flex items-center text-black font-semibold hover:underline cursor-pointer" id="headline1">
                 ChatGPT AI API
                 <ChevronDownIcon className="w-5 h-5 ml-1" />
               </div>
@@ -59,7 +59,7 @@ export default function Skills() {
 
         </div>
 
-            <div className='text-xl font-semibold pt-6' id="headline1">
+            <div className='text-xl font-semibold pt-6' >
             Figma for User Experience Design
             </div>
             <div className='underline font-medium py-3'>
@@ -97,7 +97,7 @@ export default function Skills() {
                     height={1000}
                     className='mx-auto'
                   />
-                  <p className="caption text-xs italic text-center mt-4">
+                  <p className="caption text-xs italic text-center mt-4" id="headline2">
                     Design of the platform using Figma.
                   </p>
                 </div>
@@ -106,7 +106,7 @@ export default function Skills() {
 
 
 
-            <div className='text-xl font-semibold pt-6' id="headline2">
+            <div className='text-xl font-semibold pt-6' >
             Swift and VisionOS for Mixed Reality Development
             </div>
             <div className='underline font-medium py-3'>
@@ -148,14 +148,14 @@ export default function Skills() {
                   width={700}
                   height={700}
                 />
-                <p className="caption text-xs italic text-center mt-4">
+                <p className="caption text-xs italic text-center mt-4" id="headline3">
                   Screenshot of XCode of my VisionOS project.
                 </p>
               </div>
             </div>
 
 
-            <div className='text-xl font-semibold pt-6' id="headline3">
+            <div className='text-xl font-semibold pt-6'>
             NEXTJS and React Web Development
             </div>
             <div className='underline font-medium py-3'>
@@ -187,13 +187,13 @@ export default function Skills() {
                     height={1000}
                     className='mx-auto'
                   />
-                  <p className="caption text-xs italic text-center mt-4">
+                  <p className="caption text-xs italic text-center mt-4" id="headline4">
                     The next.js project in VSCode.
                   </p>
                 </div>
               </div>
 
-            <div className='text-xl font-semibold pt-6' id="headline4">
+            <div className='text-xl font-semibold pt-6' >
             ChatGPT AI API
             </div>
             <p>An important feature of the new platform was the integration of a new chat-based generative Artificial Intelligence.</p>
@@ -218,15 +218,13 @@ export default function Skills() {
 
           <div className='py-12 flex justify-center'>
             <div className='text-center'>
-                  <Image
-                    src="/OpenAI_Code.jpg" 
-                    alt="OpenAI_Code.js"
-                    width={400}
-                    height={400}
-                    className='mx-auto'
-                  />
+            <video width="720" height="440" controls preload="none" loop autoPlay muted>
+              <source src="/AIChatbot.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
                   <p className="caption text-xs italic text-center mt-4">
-                    Integration of the OpenAI API into my project.
+                    Integration of the OpenAI API into my <br />
+                    AI Chatbot as Culture Software Group sales consultant
                   </p>
                 </div>
               </div>

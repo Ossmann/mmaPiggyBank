@@ -28,23 +28,30 @@ export default function Placement() {
             <p>I did my Work Integrated Learning (WIL) placement with a software company called fluxguide that is headquartered in Vienna, Austria. Fluxguide had been recently acquired by the culture software group. Furthermore, the culture software group with their largest subsidiary company zetcom had at the start of my placement acquired the Brisbane based Australian company Ortelia to create a fully functional business unit in Australia. All those three companies (fluxguide, Ortelia and zetcom) are leaders in software for the cultural sector and especially museums. Fluxguide is especially leading in augmented reality for museums. Therefore, I was also looking into developing apps for the brand new apple vision pro as part of my WIL. My main task however, was to create a tool that would help connect those different product offerings of those different software companies. To achieve this I would be meeting regularly with teams in Europe and in Australia.</p>
 
             <div className='py-12'>
-              <div className='flex text-center'>
-                <Image
-                  src="/csg_overview.jpg" 
-                  alt="Culture Software Group"
-                  width={700}
-                  height={700}
-                  className=''
-                />
-                <Image
-                  src="/csg_global.jpg" 
-                  alt="Culture Software Group global"
-                  width={700}
-                  height={700}
-                  className=''
-                />
+              <div className='flex flex-wrap justify-center'>
+                <div className='p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/2'>
+                  <Image
+                    src="/csg_overview.jpg"
+                    alt="Culture Software Group"
+                    layout="responsive"
+                    width={1000}
+                    height={1000}
+                    className='object-contain'
+                  />
+                </div>
+                <div className='p-2 w-full sm:w-1/4 md:w-1/3 lg:w-1/2'>
+                  <Image
+                    src="/csg_global.jpg"
+                    alt="Culture Software Group global"
+                    layout="responsive"
+                    width={1000}
+                    height={1000}
+                    className='object-contain'
+                  />
+                </div>
               </div>
             </div>
+
 
             <p>When I joined I noticed there was a lot of internal confusion between the 3 companies zetcom, fluxguide and Ortelia. Also, customers were confused about the interaction of the various products offered by the three companies and how they interlink.</p>
 
@@ -66,8 +73,8 @@ export default function Placement() {
               <Image
                 src="/AR.jpg"
                 alt="Placeholder"
-                width={500}
-                height={500}
+                width={400}
+                height={400}
                 className="p-6"
               />
               <p className="caption text-xs italic text-center">My Vision Pro apps trialed by happy visitors at the Cultura Suisse exhibition.</p>
@@ -85,12 +92,41 @@ export default function Placement() {
               <p>The final web-platform can be previewed here: <a href="https://product-finder-eosin.vercel.app/" className="text-blue-800 font-semibold">LINK</a></p>
               <p>Check out my Vision Pro projects on my YouTube channel: <a href="https://www.youtube.com/@jakobossmann2323" className="text-red-800 font-semibold">https://www.youtube.com/@jakobossmann2323</a></p>
             </div>
-            <section>
+            
+            {/* <section>
               <Suspense fallback={<p>Loading video...</p>}>
                 <VideoComponent />
               </Suspense>
               {/* Other content of the page */}
-            </section>
+            {/* </section> */}
+
+            <div className='flex justify-center items-center py-4'>
+              <div className='text-center'>
+                <video width="600" height="600" controls preload="none" loop autoPlay muted>
+                  <source src="/Statue_with_Info_explanation.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="caption text-xs italic text-center mt-1">
+                  Touch based object annotation in the Vision Pro
+                </p>
+              </div>
+            </div>
+
+            <div className='flex justify-center items-center py-4'>
+              <div className='text-center'>
+                <video width="600" height="600" controls preload="none" loop autoPlay muted>
+                  <source src="/Vision ProVideo.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="caption text-xs italic text-center mt-1">
+                  Viewing the new web-platform in mixed reality on the vision pro.
+                </p>
+              </div>
+            </div>
+
+
+
+
           </div>
         </div>
       </div>
