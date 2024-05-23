@@ -133,7 +133,7 @@ export default function Skills() {
               <div className='flex flex-col items-center mr-8'>
                 <Image
                   src="/VisionOS.jpg"
-                  alt="VisionOS canvases"
+                  alt="VisionOS"
                   width={500}
                   height={500}
                 />
