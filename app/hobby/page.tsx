@@ -1,7 +1,7 @@
 import Navbar from '../components/navbar';
 import Image from 'next/image';
 
-export default function AboutMe() {
+export default function Hobby() {
   return (
     <div className='relative h-screen'>
       <div className='fixed top-0 left-0 right-0'>
