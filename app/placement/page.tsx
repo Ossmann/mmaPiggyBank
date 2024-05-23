@@ -1,5 +1,9 @@
 import Navbar from '../components/navbar';
 import Image from 'next/image';
+import { Suspense } from 'react'
+import VideoComponent from '../components/video';
+import dynamic from 'next/dynamic';
+
 
 export default function Placement() {
   return (
@@ -81,6 +85,12 @@ export default function Placement() {
               <p>The final web-platform can be previewed here: <a href="https://product-finder-eosin.vercel.app/" className="text-blue-800 font-semibold">LINK</a></p>
               <p>Check out my Vision Pro projects on my YouTube channel: <a href="https://www.youtube.com/@jakobossmann2323" className="text-red-800 font-semibold">https://www.youtube.com/@jakobossmann2323</a></p>
             </div>
+            <section>
+              <Suspense fallback={<p>Loading video...</p>}>
+                <VideoComponent />
+              </Suspense>
+              {/* Other content of the page */}
+            </section>
           </div>
         </div>
       </div>
