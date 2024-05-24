@@ -204,10 +204,10 @@ export default function Skills() {
             <div className='text-xl font-semibold pt-6' >
             ChatGPT AI API
             </div>
-            <p>An important feature of the new platform was the integration of a new chat-based generative Artificial Intelligence.</p>
             <div className='underline font-medium py-3'>
             Context
             </div>
+            <p>An important feature of the new platform was the integration of a new chat-based generative Artificial Intelligence.</p>
             <div className='underline font-medium py-3'>
             Action
             </div>
@@ -216,7 +216,7 @@ export default function Skills() {
             <div className='underline font-medium py-3'>
             Result
             </div>
-            <p>The Result was fully functioning Chat Bot that could act as a sales consultant for the culture software group.
+            <p>The Result was a fully functioning Chat Bot that could act as a sales consultant for the culture software group.
 </p>
             <div className='underline font-medium py-3'>
             Learning

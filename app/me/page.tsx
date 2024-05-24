@@ -13,7 +13,7 @@ export default function AboutMe() {
           <div className='absolute inset-0 bg-white opacity-75'></div>
           <div className='relative p-20'>
             <div className='text-4xl font-bold pb-8'>
-              Hello I am Jakob 👋
+              Hello, I am Jakob 👋
             </div>
             <div className='float-right p-4'>
                   <Image
