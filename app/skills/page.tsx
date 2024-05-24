@@ -20,7 +20,7 @@ export default function Skills() {
               My Technical Skills
             </div>
 
-            <p>In the present section I will describe the technical skills I was able to hone through my work integrated learning placement. For each technical skill I will apply the CARL (Context, Action, Result, Learning) reflective framework to showcase what I have learned. I will also lay out how each technical skills I worked on during my placement. I am happy I had to opportunity to develop new skills in a variety of areas such as apples VisionOS framework, the web-development framework nextjs and Generative Artificial Intelligence development through my WIL Placement.</p>
+            <p>In the present section I will describe the technical skills I was able to hone through my work integrated learning placement. For each technical skill I will apply the CARL (Context, Action, Result, Learning) reflective framework to showcase what I have learned. I am happy I had the opportunity to develop new skills in a variety of areas such as apple's VisionOS framework, the web-development framework nextjs and Generative Artificial Intelligence development through my WIL Placement.</p>
 
         <div className='py-4'>
         <ul className="space-y-4">
