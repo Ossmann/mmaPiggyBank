@@ -39,13 +39,6 @@ export default function AboutMe() {
 
 <p className='py-4'>In the long run, I want to establish myself as an internationally sought after industry expert for 3D- and augmented reality software development. 
 </p>
-
-<div className='mt flex space-x-4 pt-10 text-gray-800 font-semibold '>
-  <p className='hover:underline'><a href="mailto:Jakobossmann@gmail.com" target="_blank" rel="noopener noreferrer">Email</a></p>
-    <p className='hover:underline'><a href="https://product-finder-eosin.vercel.app/">Youtube</a></p>
-    <p className='hover:underline'><a href="https://github.com/Ossmann">Github</a></p>
-    <p className='hover:underline'><a href="https://www.linkedin.com/in/jakobossmann/">Linkedin</a></p>
-</div>
   
           </div>
         </div>

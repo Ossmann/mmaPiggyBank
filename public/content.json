@@ -1,33 +1,21 @@
 {
     "projects": [
       {
-        "title": "Project 1",
-        "description": "Description for project 1",
+        "title": "Stock Recommendations App",
+        "description": "A native swift iOS app that uses data mining and statistical analysis to creative individualised stock recommendations.",
+        "href": "https://youtu.be/a6FTwYcof7A",
+        "image": "SearchLight_Cover.jpg"
+      },
+      {
+        "title": "AI Sales Consultant",
+        "description": "Using the OpenAI GenAI API to build a sales consultant on a NEXTJS site.",
+        "href": "https://product-finder-eosin.vercel.app/chatbot",
         "image": "ai_chatbot.jpg"
       },
       {
-        "title": "Project 2",
-        "description": "Description for project 2",
-        "image": "OpenAI_Code.jpg"
-      },
-      {
-        "title": "Project 2",
-        "description": "Description for project 2",
-        "image": "OpenAI_Code.jpg"
-      },
-      {
-        "title": "Project 1",
-        "description": "Description for project 1",
-        "image": "ai_chatbot.jpg"
-      },
-      {
-        "title": "Project 2",
-        "description": "Description for project 2",
-        "image": "OpenAI_Code.jpg"
-      },
-      {
-        "title": "Project 2",
-        "description": "Description for project 2",
+        "title": "AWS, Docker & Kubernetes",
+        "description": "Hosting a web-dev project on AWS with dockerized containers and Kubernetes management.",
+        "href": "https://www.youtube.com/watch?v=5eb2ZRh0eCU&ab_channel=JakobOssmann",
         "image": "OpenAI_Code.jpg"
       }
     ]
