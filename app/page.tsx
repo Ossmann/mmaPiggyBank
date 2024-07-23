@@ -17,23 +17,25 @@ export default async function Portfolio() {
 
   return (
     <div className='relative h-screen'>
-      <div className='p-20'>
-      <div className='fixed top-0 left-0 right-0 z-20'>
+      <div className='sm:p-20'>
+      <div className='hidden md:block fixed top-0 left-0 right-0 z-20'>
         <Navbar />
       </div>
 
       {/* Intro */}
       <section id="home" className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center">
         <h1 className="text-3xl md:text-6xl font-bold mb-4">Hi, I am Jakob 👋🏼</h1>
-        <p className="w-3/4">I&apos;m Jakob, a software engineer on the Gold Coast with with 5+ years of developing digital solutions and a passion for immersive technologies.</p>
+        <p className="w-3/4">I&apos;m Jakob, a software engineer on the Gold Coast with a passion for immersive technologies.</p>
         <div className="flex gap-5">
           <a href="mailto:Jakobossmann@gmail.com">
             <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-black text-white hover:bg-blue-800">
               Get in touch
             </button>
           </a>
-          <a download="" target="_blank" href="/public/CV_Jakob_Ossmann.pdf">
-            <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-gray-300 text-white hover:bg-blue-800">Download resume</button>
+          <a href="/CV_Jakob_Ossmann.pdf" download target="_blank" rel="noopener noreferrer">
+            <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-gray-300 text-white hover:bg-blue-800">
+              Download resume
+            </button>
           </a>
         </div>
         <a href="#portfolio" className='pt-10'>
@@ -52,12 +54,12 @@ export default async function Portfolio() {
               className='w-full h-64 object-cover rounded-md'
             />
             <h2 className='text-2xl font-bold mt-4'>{project.title}</h2>
-            <p className='text-lg mt-2'>{project.description}</p>
+            <p className='mt-2'>{project.description}</p>
           </a>
         ))}
       </div>
       {/* Empty bottom space */}
-      <div className='p-20'></div>
+      <div className='p-16'></div>
     </div>
     </div>
   );

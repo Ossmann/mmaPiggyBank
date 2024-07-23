@@ -15,12 +15,12 @@ export default function AboutMe() {
             <div className='text-4xl font-bold pb-8'>
               Hello, I am Jakob 👋
             </div>
-            <div className='float-right p-4'>
+            <div className='xl:float-right p-6'>
                   <Image
                     src="/beach.jpg" 
                     alt="Beach"
-                    width={600}
-                    height={600}
+                    width={500}
+                    height={500}
                     className=''
                   />
    
@@ -32,7 +32,7 @@ export default function AboutMe() {
             <p>Welcome to my page. I am a software developer originally from Vienna, Austria now based on the Gold Coast. I have a passion for immersive technologies and digital experiences. Through my previous jobs I was able to collect more than 5 years professional experience in developing digital solutions. 
 </p>
 
-<p className='py-2'>I graduated from Griffith University Master of Information Technology.</p>
+<p className='py-2'>I graduated from Griffith University, Master of Information Technology.</p>
 
 <p className='py-2'>I am always looking for interesting opportunities to apply my skills as a software developer. In my next endeavour I am looking to build on the state-of-the-art web development and augmented reality skills I developed through my work and studies.
 </p>
