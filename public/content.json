@@ -1,7 +1,7 @@
 {
     "projects": [
       {
-        "title": "Stock Recommendations App",
+        "title": "Stock Swiper Recommendations App",
         "description": "A native swift iOS app that uses data mining and statistical analysis to creative individualised stock recommendations.",
         "href": "https://youtu.be/a6FTwYcof7A",
         "image": "SearchLight_Cover.jpg"
@@ -16,7 +16,7 @@
         "title": "AWS, Docker & Kubernetes",
         "description": "Hosting a web-dev project on AWS with dockerized containers and Kubernetes management.",
         "href": "https://www.youtube.com/watch?v=5eb2ZRh0eCU&ab_channel=JakobOssmann",
-        "image": "OpenAI_Code.jpg"
+        "image": "AWS.jpg"
       }
     ]
   }

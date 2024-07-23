@@ -11,6 +11,7 @@ export default async function Portfolio() {
   type Project = {
     title: string;
     image: string;
+    href: string;
     description: string;
   };
 
@@ -42,9 +43,9 @@ export default async function Portfolio() {
 
       <div id="portfolio"></div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 space-x-2'>
+      <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-y-24 space-x-2'>
         {content.projects.map((project, index) => (
-          <div key={index} className='border p-8 rounded-md hover:border-2 hover:border-black'>
+          <a key={index} href={project.href} target="_blank" className='border p-8 rounded-md hover:border-2 hover:border-black'>
             <img
               src={project.image}
               alt={project.title}
@@ -52,7 +53,7 @@ export default async function Portfolio() {
             />
             <h2 className='text-2xl font-bold mt-4'>{project.title}</h2>
             <p className='text-lg mt-2'>{project.description}</p>
-          </div>
+          </a>
         ))}
       </div>
       {/* Empty bottom space */}
