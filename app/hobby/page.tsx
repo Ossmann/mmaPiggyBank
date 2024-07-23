@@ -16,7 +16,7 @@ export default function Hobby() {
               My Hobby
             </div>
             <div className='text-xl font-semibold pt-2 pb-3'>
-            Sufring: My Perfect Contrast to Software Development
+            Surfing: My Perfect Contrast to Software Development
             </div>
         
             <p>When I am not developing software you can find me on the beach chasing waves. I live close  to Snapper Rocks, one of the best and most consistent surf spots in the world. A little far south is my favourite break called Kirra. When the swell is right, Kirra offers great waves for endless longboard rides, perfect for a right footer like me. </p>

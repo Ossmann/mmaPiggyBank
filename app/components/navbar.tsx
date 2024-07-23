@@ -6,9 +6,7 @@ import { usePathname } from 'next/navigation'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '/placement', label: 'My Placement' },
-    { href: '/skills', label: 'My Technical Skills' },
-    { href: '/ethics', label: 'My Ethics' },
+    { href: '/', label: 'My Portfolio' },
     { href: '/hobby', label: 'My Hobby' },
     { href: '/me', label: 'About Me' },
   ];
@@ -16,10 +14,9 @@ export default function Navbar() {
   return (
     <div>
       <div className='flex justify-between p-4 bg-white border font-light text-sm px-20'>
-        <div className='flex justify-start hover:underline pl-2'>
-          <Link href="/">
-            Home
-          </Link>
+        <div className='justify-start pl-2 '>
+          <div>Jakob Ossmann</div>
+          <div className='text-xs lowercase font-mono mt-1"'>fullstack developer</div>
         </div>
   
         <div className='flex justify-center'>

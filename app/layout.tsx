@@ -22,16 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <body className={`${inter.className} relative h-screen`}>
-        {/* Background image */}
-        <div className="absolute inset-0 z-[-1] h-full">
-          <Image
-            src="/ian-dooley-ZLBzMGle-nE-unsplash.jpg"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            alt="Background Image"
-          />
-        </div>
+
 
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-white opacity-50 z-[-1] h-full"></div>
@@ -39,6 +30,25 @@ export default function RootLayout({
         <div className="relative z-10">
           {children}
         </div>
+
+        {/* Sticky Footer */}
+        <footer className="fixed bottom-0 left-0 w-full bg-white bg-opacity-75 py-4 z-20">
+          <div className="container mx-auto px-4 mt flex space-x-4 pt-10 font-semibold">
+            <p className='hover:underline'>
+              <a href="mailto:Jakobossmann@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
+            </p>
+            <p className='hover:underline'>
+              <a href="https://product-finder-eosin.vercel.app/">Youtube</a>
+            </p>
+            <p className='hover:underline'>
+              <a href="https://github.com/Ossmann">Github</a>
+            </p>
+            <p className='hover:underline'>
+              <a href="https://www.linkedin.com/in/jakobossmann/">Linkedin</a>
+            </p>
+          </div>
+        </footer>
+
       </body>
     </html>
   );
