@@ -7,7 +7,12 @@ import {
 export default async function Portfolio() {
 
   const file = await fs.readFile(process.cwd() + '/public/content.json', 'utf8');
-  const content = JSON.parse(file);
+  const content: { projects: Project[] } = JSON.parse(file);
+  type Project = {
+    title: string;
+    image: string;
+    description: string;
+  };
 
   return (
     <div className='relative h-screen'>
