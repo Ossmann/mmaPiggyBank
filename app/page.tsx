@@ -11,6 +11,7 @@ export default async function Portfolio() {
 
   return (
     <div className='relative h-screen'>
+      <div className='p-20'>
       <div className='fixed top-0 left-0 right-0 z-20'>
         <Navbar />
       </div>
@@ -18,7 +19,7 @@ export default async function Portfolio() {
       {/* Intro */}
       <section id="home" className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center">
         <h1 className="text-3xl md:text-6xl font-bold mb-4">Hi, I am Jakob 👋🏼</h1>
-        <p className="w-3/4">I'm Jakob, a software engineer on the Gold Coast with 2+ years experience in web development. Recently, I have been focusing on iOS and immersive technologies.</p>
+        <p className="w-3/4">I&apos;m Jakob, a software engineer on the Gold Coast with with 5+ years of developing digital solutions and a passion for immersive technologies.</p>
         <div className="flex gap-5">
           <a href="mailto:Jakobossmann@gmail.com">
             <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-black text-white hover:bg-blue-800">
@@ -38,7 +39,7 @@ export default async function Portfolio() {
 
       <div className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 space-x-2'>
         {content.projects.map((project, index) => (
-          <div key={index} className='border p-8 rounded-md'>
+          <div key={index} className='border p-8 rounded-md hover:border-2 hover:border-black'>
             <img
               src={project.image}
               alt={project.title}
@@ -49,6 +50,9 @@ export default async function Portfolio() {
           </div>
         ))}
       </div>
+      {/* Empty bottom space */}
+      <div className='p-20'></div>
+    </div>
     </div>
   );
 }
