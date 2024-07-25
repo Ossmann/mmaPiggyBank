@@ -25,7 +25,10 @@ export default async function Portfolio() {
       {/* Intro */}
       <section id="home" className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center">
         <h1 className="text-3xl md:text-6xl font-bold mb-4">Hi, I am Jakob 👋🏼</h1>
-        <p className="w-3/4">I&apos;m Jakob, a software engineer on the Gold Coast with a passion for immersive technologies.</p>
+        <div className="space-y-0 w-3/4">
+          <p>I&apos;m Jakob, a software engineer on the Gold Coast with a passion for immersive technologies.</p>
+          <p className="-mt-4">I am proficient in working in Linux and prioritize network- & cyber security.</p>
+        </div>
         <div className="flex gap-5">
           <a href="mailto:Jakobossmann@gmail.com">
             <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-black text-white hover:bg-blue-800">

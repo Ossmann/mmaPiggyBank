@@ -1,10 +1,10 @@
 {
     "projects": [
       {
-        "title": "Stock Swiper Recommendations App",
-        "description": "A native swift iOS app that uses data mining and statistical analysis to creative individualised stock recommendations.",
-        "href": "https://youtu.be/a6FTwYcof7A",
-        "image": "SearchLight_Cover.jpg"
+        "title": "Apple Vision Pro Museum Explorer",
+        "description": "Native Swift application for the Apple Vision Pro. Explore 3D exhibtis with touch annotations.",
+        "href": "https://www.youtube.com/watch?v=nqBY5WOif68&ab_channel=JakobOssmann",
+        "image": "vision_statue.jpg"
       },
       {
         "title": "AI Sales Consultant",
@@ -17,6 +17,24 @@
         "description": "Hosting a web-dev project on AWS with dockerized containers and Kubernetes management.",
         "href": "https://www.youtube.com/watch?v=5eb2ZRh0eCU&ab_channel=JakobOssmann",
         "image": "AWS.jpg"
+      },
+      {
+        "title": "Stock Swiper Recommendations App",
+        "description": "A native swift iOS app that uses data mining and statistical analysis to creative individualised stock recommendations.",
+        "href": "https://youtu.be/a6FTwYcof7A",
+        "image": "SearchLight_Cover.jpg"
+      },
+      {
+        "title": "Big Data Analysis with Spotify, Twitter & Youtube API",
+        "description": "Analysed the user base, connections and attributes of country singer Luke Combs by applying big data analytics to data from Twitter, Spotify and Youtube API.",
+        "href": "https://youtu.be/Gqcq62sEvLQ",
+        "image": "Luke_Combs_Data.png"
+      },
+      {
+        "title": "Unity Augmented Reality Mobile Game",
+        "description": "Built an Augmented Reality mobile game with Unity and Vuforia.",
+        "href": "https://www.youtube.com/watch?v=aapWuwJGV_U&ab_channel=JakobOssmann",
+        "image": "trump_unity.png"
       }
     ]
   }
