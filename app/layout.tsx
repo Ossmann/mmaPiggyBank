@@ -19,13 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.jpg" />
       </Head>
       <body className={`${inter.className} relative h-screen`}>
-
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-white opacity-50 z-[-1] h-full"></div>
         
         <div className="relative z-10">
           {children}
