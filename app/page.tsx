@@ -1,4 +1,6 @@
 import Navbar from './components/navbar';
+import Head from "next/head";
+import LottiePlayer from "./components/LottiePlayer";
 import Image from 'next/image'
 import {
   ChevronDownIcon
@@ -11,12 +13,17 @@ export default async function Home() {
 
       {/* Guru Image */}
       <Image
-      className='fixed left-0 top-0 z-0'
+      className="fixed -ml-80 top-0 -z-10"
       src="/GuruPortrait.png"
       width={1000}
       height={1000}
       alt="Picture of the author"
     />
+
+    {/* Piggy Bank LottieFile Animation */}
+    <div className="fixed absolute bottom-20 right-40 w-80">
+          <LottiePlayer />
+    </div>
 
       {/* Intro */}
       <section id="home" className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center">
@@ -25,18 +32,7 @@ export default async function Home() {
           <p>Help to push real Chads, fight injustice and promote fan-friendly fighters.</p>
           <p className="-mt-4">Vote for fighters that you think deserve the Guru Piggy Bank Bonus.</p>
         </div>
-        <div className="flex gap-5">
-          <a href="mailto:Jakobossmann@gmail.com">
-            <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-black text-white hover:bg-blue-800">
-              Get in touch
-            </button>
-          </a>
-          <a href="/CV_Jakob_Ossmann.pdf" download target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center justify-center rounded-full px-4 py-2 hover:scale-105 bg-gray-300 text-white hover:bg-blue-800">
-              Download resume
-            </button>
-          </a>
-        </div>
+
         <a href="#portfolio" className='pt-10'>
           <ChevronDownIcon className="h-16 w-16 animate-bounce " />
         </a>
