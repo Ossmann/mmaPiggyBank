@@ -17,7 +17,7 @@ export default function LottiePlayer() {
       });
 
       // Set the speed of the animation
-      animation.setSpeed(0.6); // Slow speed for testing
+      animation.setSpeed(0.5); // Slow speed for testing
 
       // Cleanup function to destroy the animation instance
       return () => {

@@ -1,6 +1,7 @@
 import Navbar from './components/navbar';
 import Head from "next/head";
 import LottiePlayer from "./components/LottiePlayer";
+import Headline from "./components/headline";
 import Image from 'next/image'
 import {
   ChevronDownIcon
@@ -26,14 +27,18 @@ export default async function Home() {
     </div>
 
       {/* Intro */}
-      <section id="home" className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center">
-        <h1 className="text-3xl md:text-6xl font-bold mb-4">The MMA Guru PiggyBank</h1>
+      <section
+        id="home"
+        className="h-screen flex flex-col justify-center space-y-10 w-full items-center text-center"
+      >
+        <Headline />
+        
         <div className="space-y-0 w-3/4">
           <p>Help to push real Chads, fight injustice and promote fan-friendly fighters.</p>
           <p className="-mt-4">Vote for fighters that you think deserve the Guru Piggy Bank Bonus.</p>
         </div>
 
-        <a href="#portfolio" className='pt-10'>
+        <a href="#fightCards" className='pt-10'>
           <ChevronDownIcon className="h-16 w-16 animate-bounce " />
         </a>
       </section>
