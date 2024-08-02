@@ -12,13 +12,13 @@ export default async function Home() {
   return (
     <div className='relative h-screen'>
 
-      {/* Guru Image */}
-      <Image
-      className="fixed -ml-80 top-0 -z-10"
+  {/* Guru Image */}
+    <Image
+      className="fixed -ml-50 top-0 -z-10 object-cover"
       src="/GuruPortrait.png"
-      width={1000}
-      height={1000}
-      alt="Picture of the author"
+      width={460}
+      height={460}
+      alt="The MMA Guru - Prey Eyes"
     />
 
     {/* Piggy Bank LottieFile Animation */}

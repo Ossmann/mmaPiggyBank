@@ -8,25 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      keyframes: {
-        'bounce-horizontal': {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '50%': { transform: 'translateX(5%)' },
-        },
-        'fadeIn': {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-      },
-      animation: {
-        'bounce-horizontal': 'bounce-horizontal 2s infinite',
-        'fadeIn': 'fadeIn 2s ease-in-out',
-      },
+
     },
   },
   plugins: [],
