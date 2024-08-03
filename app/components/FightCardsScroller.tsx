@@ -7,14 +7,12 @@ export default async function FightCardsScroller() {
     console.log(fightCards);
 
     return (
-        <div className='overflow-x-scroll'>
-            {fightCards.map((fightCard) => {
-                return (
-                    <div key={fightCard.fight_card_id}>
-                        {fightCard.name}
-                    </div>
-                );
-            })}
+        <div className='overflow-x-auto whitespace-nowrap'>
+            {fightCards.map((fightCard) => (
+                <div className='inline-block px-4 py-2' key={fightCard.fight_card_id}>
+                    {fightCard.name}
+                </div>
+            ))}
         </div>
     );
 }
