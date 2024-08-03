@@ -27,24 +27,6 @@ export default function RootLayout({
           {children}
         </div>
 
-        {/* Sticky Footer */}
-        <footer className="fixed bottom-0 left-0 w-full bg-white bg-opacity-75 py-4 z-20">
-          <div className="container mx-auto px-4 mt flex space-x-4 pt-4 font-semibold">
-            <p className='hover:underline'>
-              <a href="mailto:Jakobossmann@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-            </p>
-            <p className='hover:underline'>
-              <a href="https://www.youtube.com/@jakobossmann2323" target="_blank">Youtube</a>
-            </p>
-            <p className='hover:underline'>
-              <a href="https://github.com/Ossmann" target="_blank">Github</a>
-            </p>
-            <p className='hover:underline'>
-              <a href="https://www.linkedin.com/in/jakobossmann/" target="_blank">Linkedin</a>
-            </p>
-          </div>
-        </footer>
-
       </body>
     </html>
   );

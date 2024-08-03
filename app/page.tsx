@@ -3,6 +3,7 @@ import Head from "next/head";
 import LottiePlayer from "./components/LottiePlayer";
 import Headline from "./components/headline";
 import Image from 'next/image'
+import FightCardsScroller from './components/FightCardsScroller';
 import {
   ChevronDownIcon
 } from '@heroicons/react/24/solid';
@@ -42,6 +43,8 @@ export default async function Home() {
           <ChevronDownIcon className="h-16 w-16 animate-bounce " />
         </a>
       </section>
+
+      <FightCardsScroller/>
 
       {/* Empty bottom space */}
       <div className='p-16'></div>
