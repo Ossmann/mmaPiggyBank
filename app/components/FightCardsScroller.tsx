@@ -4,7 +4,6 @@ import { FightCard } from '../data/definitions';
 
 export default async function FightCardsScroller() {
     const fightCards = await getFightCards();
-    console.log(fightCards);
 
     return (
         <div className='overflow-x-auto whitespace-nowrap'>

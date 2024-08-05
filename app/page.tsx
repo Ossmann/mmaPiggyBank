@@ -11,43 +11,37 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="h-screen w-full flex flex-col justify-center items-center text-center space-y-10"
+        className="relative h-screen w-full flex flex-col justify-center items-center text-center space-y-10"
       >
-        <div className="flex flex-col md:flex-row items-center justify-center space-x-4 md:space-x-8">
-          {/* Guru Image */}
-          <Image
-            className="object-cover max-w-full h-auto"
-            src="/GuruPortrait.png"
-            width={460}
-            height={460}
-            alt="The MMA Guru - Prey Eyes"
-          />
+        {/* Guru Image */}
+        <Image
+          className="absolute -left-20 top-1/2 transform -translate-y-1/2 object-cover h-auto -z-10" // Positioning image to the left
+          src="/GuruPortrait.png"
+          width={480}
+          height={480}
+          alt="The MMA Guru - Prey Eyes"
+        />
 
-          <div className="max-w-lg">
-            {/* Intro */}
-            <Headline />
-            <div className="space-y-2">
-              <p>
-                Help to push real Chads, fight injustice, and promote
-                fan-friendly fighters.
-              </p>
-              <p className="-mt-2">
-                Vote for fighters that you think deserve the Guru Piggy Bank
-                Bonus.
-              </p>
-            </div>
-          </div>
+        {/* Piggy Bank LottieFile Animation */}
+        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-80"> {/* Positioning animation to the right */}
+          <LottiePlayer />
+        </div>
 
-          {/* Piggy Bank LottieFile Animation */}
-          <div className="w-full md:w-80">
-            <LottiePlayer />
-          </div>
+        {/* Clear floats */}
+        <div className="clear-both"></div>
+
+        {/* Intro */}
+        <Headline />
+        <div className="space-y-2">
+          <p>Help to push real Chads, fight injustice, and promote fan-friendly fighters.</p>
+          <p className="-mt-2">Vote for fighters that you think deserve the Guru Piggy Bank Bonus.</p>
         </div>
 
         <a href="#fightCards" className="pt-10">
           <ChevronDownIcon className="h-16 w-16 animate-bounce" />
         </a>
       </section>
+
 
       {/* Fight Cards Section */}
       <section

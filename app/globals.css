@@ -46,3 +46,6 @@ body {
     0 -3px 0 rgba(107, 199, 204, 1);  
 }
 
+.container {
+  overflow: auto; /* Contain floats within the container */
+}
