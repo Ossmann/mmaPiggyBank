@@ -24,14 +24,16 @@ export type FightCard = {
 
 export type Fight = {
     fight_id: number;
-    fight_card_id: number; // Links to a specific fight card
-    fighter1_id: number;   // ID of the first fighter
-    fighter2_id: number;   // ID of the second fighter
-    result1: string;       // Result for the first fighter, e.g., 'Win' or 'Loss'
-    result2: string;       // Result for the second fighter
-    role1: string;         // Role of the first fighter, e.g., 'winner', 'loser'
-    role2: string;         // Role of the second fighter
-    cardPosition: number;  // Position of the fight on the card
+    fight_card_id: number; // Ensure this is part of the SQL result if needed
+    cardPosition: number;
+    fighter1_name: string;
+    fighter1_piggyvotes: number;
+    fighter1_result: string;
+    fighter1_role: string;
+    fighter2_name: string;
+    fighter2_piggyvotes: number;
+    fighter2_result: string;
+    fighter2_role: string;
 };
 
 export type FighterFight = {
