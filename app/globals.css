@@ -7,6 +7,7 @@ body {
   color: white;
 }
 
+/* Glow text for the main Welcom Headline */
 .glow-text-purple {
   text-shadow:
     /* Outer Glow */
@@ -46,6 +47,34 @@ body {
     0 -3px 0 rgba(107, 199, 204, 1);  
 }
 
-.container {
-  overflow: auto; /* Contain floats within the container */
+
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+}
+
+.scroll-item {
+  flex: 0 0 auto; /* Prevents items from shrinking */
+  width: 150px; /* Adjust width as needed */
+  height: 80px; /* Adjust height as needed */
+  margin: 6px;
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-snap-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font-family: small;
+  font-weight: bolder;
+}
+
+.scroll-item:hover {
+  transform: scale(1.1); /* Scale effect on hover */
 }
