@@ -48,7 +48,6 @@ export default function Home() {
         id="fightCards"
         className="h-screen flex justify-center items-center"
       >
-        TEST
         <FightCardsScroller />
       </section>
 

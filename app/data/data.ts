@@ -36,7 +36,7 @@ import {
           CONCAT(f1.first_name, ' ', f1.last_name) AS fighter1_name,
           CONCAT(f2.first_name, ' ', f2.last_name) AS fighter2_name,
           f.result,
-          f.result,
+          f.winner,
           f.fighter1_PiggyVotes,
           f.fighter2_PiggyVotes
       FROM
@@ -48,9 +48,9 @@ import {
       JOIN
           Fighter f2 ON f.fighter2_id = f2.fighter_id
       WHERE 
-          f.fight_card_id = 2
+          f.fight_card_id = ${fightCardID}
       ORDER BY 
-          f.cardPosition DESC;
+          f.cardPosition ASC;
     `;
     console.log('Query Result:', fightsData.rows); // Add debugging log to verify query result
 

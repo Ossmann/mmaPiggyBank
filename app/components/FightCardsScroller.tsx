@@ -3,6 +3,7 @@
 import { getFightCards, getFights } from '../data/data';
 import { FightCard, Fight } from '../data/definitions';
 import React, { useState, useEffect } from 'react';
+import FighterResult from './FighterResult';
 
 
 export default function FightCardsScroller() {
@@ -39,6 +40,7 @@ export default function FightCardsScroller() {
         if (selectedFightCardId !== null) {
           try {
             const data = await getFights(selectedFightCardId);
+            console.log('Fetched Fights:', data);
             setFights(data);
           } catch (error) {
             console.error('Failed to fetch fights:', error);
@@ -67,9 +69,21 @@ export default function FightCardsScroller() {
         {/* Display fights for the selected fight card */}
         <div className="fights-container">
           {fights.map((fight) => (
-            <div className="fight-item" key={fight.fight_id}>
-              <p>Fighter 1: {fight.fighter1_name}</p>
-              <p>Fighter 2: {fight.fighter2_name}</p>
+            <div className="flex justify-between p-4 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
+              <div className="w-1/2 text-center p-2 border-r border-gray-300">
+                <FighterResult
+                  isWinner={fight.winner  === 1}
+                  name={fight.fighter1_name}
+                  piggyvotes={fight.fighter1_piggyvotes}
+                />
+              </div>
+              <div className="w-1/2 text-center p-2">
+                <FighterResult
+                  isWinner={fight.winner  === 2}
+                  name={fight.fighter2_name}
+                  piggyvotes={fight.fighter2_piggyvotes}
+                />
+              </div>
             </div>
           ))}
         </div>
