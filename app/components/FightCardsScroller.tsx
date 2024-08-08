@@ -64,12 +64,17 @@ export default function FightCardsScroller() {
               {fightCard.name}
             </div>
           ))}
+          <div className='scroll-item'>TestItem1</div>
+          <div className='scroll-item'>TestItem1</div>
+          <div className='scroll-item'>TestItem1</div>
+          <div className='scroll-item'>TestItem1</div>
+          
         </div>
   
         {/* Display fights for the selected fight card */}
-        <div className="fights-container">
+        <div className="mt-20 space-y-10">
           {fights.map((fight) => (
-            <div className="flex justify-between p-4 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
+            <div className="flex justify-between p-2 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
               <div className="w-1/2 text-center p-2 border-r border-gray-300">
                 <FighterResult
                   isWinner={fight.winner  === 1}
@@ -77,6 +82,10 @@ export default function FightCardsScroller() {
                   piggyvotes={fight.fighter1_piggyvotes}
                 />
               </div>
+              {/* <div className="font-grey-600 float">
+                Fight Result:
+                {fight.result}
+              </div> */}
               <div className="w-1/2 text-center p-2">
                 <FighterResult
                   isWinner={fight.winner  === 2}

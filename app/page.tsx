@@ -46,14 +46,16 @@ export default function Home() {
       {/* Fight Cards Section */}
       <section
         id="fightCards"
-        className="h-screen flex justify-center items-center"
+        className="h-screen flex justify-center"
       >
         <FightCardsScroller />
-      </section>
+        Test
+
+        </section>
+  
 
       {/* Empty bottom space */}
       <div className="p-16"></div>
-    </>
+      </>
   );
 }
-

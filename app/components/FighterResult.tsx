@@ -1,12 +1,20 @@
 import React from 'react';
+import { LottieOnClick } from './LottieOnClick';
 
-const FighterResult = ({ isWinner, name, piggyvotes }) => {
+interface FighterResultProps {
+  isWinner: boolean;
+  name: string;
+  piggyvotes: number;
+}
+
+const FighterResult = ({ isWinner, name, piggyvotes }: FighterResultProps) => {
   if (isWinner) {
     return (
-      <div className="text-green-500 font-bold text-center p-2">
-        <div className="text-lg">WINNER</div>
+      <div className="font-bold text-black text-center p-2">
+        <div className="text-lg text-red-800 ">WINNER</div>
         <div className="text-xl">{name}</div>
-        <div className="text-sm text-gray-600">{piggyvotes} PiggyVotes</div>
+        <LottieOnClick />
+        <div className="text-sm">{piggyvotes} PiggyVotes</div>
       </div>
     );
   } else {
