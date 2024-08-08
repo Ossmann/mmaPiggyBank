@@ -1,4 +1,4 @@
-import { Barlow_Condensed } from '@next/font/google';
+import { Barlow_Condensed } from 'next/font/google';
 
 const barlowCondensed = Barlow_Condensed({
     subsets: ['latin'], // Specify the subsets you need

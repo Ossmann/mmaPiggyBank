@@ -11,7 +11,7 @@ export type Fighter = {
     photo?: string;      
     age: number;
     height: number;      
-    PiggyVotes: number;  
+    PiggyVotes_total: number;  
 };
 
 export type FightCard = {
@@ -42,5 +42,6 @@ export type FighterFight = {
     fighter_id: number; // Foreign key linking to the Fighter table
     result: 'Win' | 'Loss'; // Result of the fight for this fighter (using string literals for type safety)
     role: 'winner' | 'loser'; // Role of the fighter in the fight (e.g., winner, loser)
+    PiggyVotes: number;  
 };
 

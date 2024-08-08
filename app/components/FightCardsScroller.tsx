@@ -38,6 +38,7 @@ export default function FightCardsScroller() {
       const fetchFights = async () => {
         if (selectedFightCardId !== null) {
           try {
+            console.log(selectedFightCardId); // Debugging log
             const data = await getFights(selectedFightCardId);
             console.log('Fetched FightsABC:', data); // Debugging log
             setFights(data);
