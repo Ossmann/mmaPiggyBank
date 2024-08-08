@@ -38,9 +38,7 @@ export default function FightCardsScroller() {
       const fetchFights = async () => {
         if (selectedFightCardId !== null) {
           try {
-            console.log(selectedFightCardId); // Debugging log
             const data = await getFights(selectedFightCardId);
-            console.log('Fetched FightsABC:', data); // Debugging log
             setFights(data);
           } catch (error) {
             console.error('Failed to fetch fights:', error);
@@ -72,7 +70,6 @@ export default function FightCardsScroller() {
             <div className="fight-item" key={fight.fight_id}>
               <p>Fighter 1: {fight.fighter1_name}</p>
               <p>Fighter 2: {fight.fighter2_name}</p>
-              <p>Card Position: {fight.cardPosition}</p>
             </div>
           ))}
         </div>

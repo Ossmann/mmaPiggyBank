@@ -28,12 +28,10 @@ export type Fight = {
     cardPosition: number;
     fighter1_name: string;
     fighter1_piggyvotes: number;
-    fighter1_result: string;
-    fighter1_role: string;
     fighter2_name: string;
     fighter2_piggyvotes: number;
-    fighter2_result: string;
-    fighter2_role: string;
+    winner: number;
+    result: string;
 };
 
 export type FighterFight = {

@@ -30,32 +30,25 @@ import {
   export async function getFights(fightCardID: number) {
     try {
       const fightsData = await sql<Fight>`
-      SELECT 
+      SELECT
           f.fight_id,
-          f.fight_card_id,
           f.cardPosition,
-          MAX(CASE WHEN ff1.role = 'fighter1' THEN CONCAT(ftr1.first_name, ' ', ftr1.last_name) ELSE CONCAT(ftr2.first_name, ' ', ftr2.last_name) END) AS fighter1_name,
-          MAX(CASE WHEN ff1.role = 'fighter1' THEN ff1.PiggyVotes ELSE ff2.PiggyVotes END) AS fighter1_piggyvotes,
-          MAX(CASE WHEN ff1.role = 'fighter1' THEN ff1.result ELSE ff2.result END) AS fighter1_result,
-          MAX(CASE WHEN ff1.role = 'fighter1' THEN ff1.role ELSE ff2.role END) AS fighter1_role,
-          MAX(CASE WHEN ff2.role = 'fighter2' THEN CONCAT(ftr2.first_name, ' ', ftr2.last_name) ELSE CONCAT(ftr1.first_name, ' ', ftr1.last_name) END) AS fighter2_name,
-          MAX(CASE WHEN ff2.role = 'fighter2' THEN ff2.PiggyVotes ELSE ff1.PiggyVotes END) AS fighter2_piggyvotes,
-          MAX(CASE WHEN ff2.role = 'fighter2' THEN ff2.result ELSE ff1.result END) AS fighter2_result,
-          MAX(CASE WHEN ff2.role = 'fighter2' THEN ff2.role ELSE ff1.role END) AS fighter2_role
-      FROM 
+          CONCAT(f1.first_name, ' ', f1.last_name) AS fighter1_name,
+          CONCAT(f2.first_name, ' ', f2.last_name) AS fighter2_name,
+          f.result,
+          f.result,
+          f.fighter1_PiggyVotes,
+          f.fighter2_PiggyVotes
+      FROM
           Fight f
-      JOIN 
-          FighterFight ff1 ON f.fight_id = ff1.fight_id
-      JOIN 
-          Fighter ftr1 ON ff1.fighter_id = ftr1.fighter_id
-      JOIN 
-          FighterFight ff2 ON f.fight_id = ff2.fight_id AND ff2.fighter_id <> ff1.fighter_id
-      JOIN 
-          Fighter ftr2 ON ff2.fighter_id = ftr2.fighter_id
+      JOIN
+          FightCard fc ON f.fight_card_id = fc.fight_card_id
+      JOIN
+          Fighter f1 ON f.fighter1_id = f1.fighter_id
+      JOIN
+          Fighter f2 ON f.fighter2_id = f2.fighter_id
       WHERE 
-          f.fight_card_id = ${fightCardID}
-      GROUP BY 
-          f.fight_id, f.fight_card_id, f.cardPosition
+          f.fight_card_id = 2
       ORDER BY 
           f.cardPosition DESC;
     `;
