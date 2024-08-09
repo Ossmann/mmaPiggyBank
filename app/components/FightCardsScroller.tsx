@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import FighterResult from './FighterResult';
 
 
+
 export default function FightCardsScroller() {
     // Use state hooks with explicit types to call and update the values for each selected card
     const [fightCards, setFightCards] = useState<FightCard[]>([]);  // Type as FightCard[]
