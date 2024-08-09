@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LottieOnClick from './LottieOnClick';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
 import { addVote } from '../data/data';
@@ -12,12 +12,15 @@ interface FighterResultProps {
   fight_id: number
 }
 
-const FighterResult = ({ isWinner, name, piggyvotes, fighterNum, fight_id }: FighterResultProps) => {
-  const voteClick = () => {
+const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id }: FighterResultProps) => {
+  const [piggyvotes, setPiggyvotes] = useState(initialPiggyVotes);
+
+  const voteClick = () => { 
     console.log('Vote Clicked!');  // Simple log to test
-    addVote(fighterNum, fight_id)
-    console.log('Called Add Vote function')
-};
+    addVote(fighterNum, fight_id);
+    setPiggyvotes(piggyvotes + 1);
+    console.log('Called Add Vote function');
+  };
 
   if (isWinner) {
     return (
