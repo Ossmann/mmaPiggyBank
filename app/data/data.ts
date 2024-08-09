@@ -4,8 +4,7 @@ import { sql } from '@vercel/postgres';
 import {
     Fighter,
     FightCard,
-    Fight,
-    FighterFight,
+    Fight
   } from './definitions';
 
   export async function getFightCards() {
@@ -60,3 +59,36 @@ import {
       throw new Error('Failed to fetch fights.');
     }
   }
+
+  // include variable to prevent double call of onclick
+  let isVoting = false;
+
+export async function addVote(fighterNum: string, fight_id: number) {
+  if (isVoting) return; // Prevent double voting
+  isVoting = true;
+
+  try {
+    console.log(fight_id);
+    if (fighterNum === 'fighter1') {
+      await sql`
+        UPDATE Fight
+        SET fighter1_piggyvotes = fighter1_piggyvotes + 1
+        WHERE fight_id = ${fight_id}
+      `;
+    } else if (fighterNum === 'fighter2') {
+      await sql`
+        UPDATE Fight
+        SET fighter2_piggyvotes = fighter2_piggyvotes + 1
+        WHERE fight_id = ${fight_id}
+      `;
+    } else {
+      throw new Error("Invalid fighter number. It should be either 1 or 2.");
+    }
+  } catch (error) {
+    console.error("Error updating votes:", error);
+  } finally {
+    isVoting = false;
+  }
+}
+
+  

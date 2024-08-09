@@ -1,15 +1,24 @@
 import React from 'react';
 import LottieOnClick from './LottieOnClick';
 import { PlusCircleIcon } from '@heroicons/react/24/solid';
+import { addVote } from '../data/data';
 
 
 interface FighterResultProps {
   isWinner: boolean;
   name: string;
   piggyvotes: number;
+  fighterNum: string;
+  fight_id: number
 }
 
-const FighterResult = ({ isWinner, name, piggyvotes }: FighterResultProps) => {
+const FighterResult = ({ isWinner, name, piggyvotes, fighterNum, fight_id }: FighterResultProps) => {
+  const voteClick = () => {
+    console.log('Vote Clicked!');  // Simple log to test
+    addVote(fighterNum, fight_id)
+    console.log('Called Add Vote function')
+};
+
   if (isWinner) {
     return (
       <div className="font-bold text-black text-center p-2">
@@ -22,8 +31,10 @@ const FighterResult = ({ isWinner, name, piggyvotes }: FighterResultProps) => {
       <div className="text-gray-800 text-center p-2">
         <div className="text-lg text-red-800 ">robbed?</div>
         <div className="text-xl">{name}</div>
-        <LottieOnClick />
-        <div className="text-sm inline-flex items-center">
+        <LottieOnClick onClick={voteClick} />
+        <div className="text-sm inline-flex items-center"
+            onClick={voteClick}
+        >
           {piggyvotes} PiggyVotes&nbsp;
           <PlusCircleIcon width={20}/>
         </div>

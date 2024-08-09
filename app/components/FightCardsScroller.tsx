@@ -77,22 +77,23 @@ export default function FightCardsScroller() {
           {fights.map((fight) => (
             <div className="flex justify-between p-2 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
               <div className="w-1/2 text-center p-2 border-r border-gray-300">
-                <FighterResult
-                  isWinner={fight.winner  === 1}
-                  name={fight.fighter1_name}
-                  piggyvotes={fight.fighter1_piggyvotes}
-                />
+              <FighterResult
+                isWinner={fight.winner === 1}
+                name={fight.fighter1_name}
+                fight_id={fight.fight_id}
+                fighterNum='fighter1'
+                piggyvotes={fight.fighter1_piggyvotes}
+              />
               </div>
-              {/* <div className="font-grey-600 float">
-                Fight Result:
-                {fight.result}
-              </div> */}
+              
               <div className="w-1/2 text-center p-2">
-                <FighterResult
-                  isWinner={fight.winner  === 2}
-                  name={fight.fighter2_name}
-                  piggyvotes={fight.fighter2_piggyvotes}
-                />
+              <FighterResult
+                isWinner={fight.winner === 2}
+                name={fight.fighter2_name}
+                fight_id={fight.fight_id}
+                fighterNum='fighter2'
+                piggyvotes={fight.fighter2_piggyvotes}
+              />
               </div>
             </div>
           ))}
