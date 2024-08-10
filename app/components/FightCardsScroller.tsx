@@ -53,7 +53,8 @@ export default function FightCardsScroller() {
     }, [selectedFightCardId]);  // Trigger fetching fights whenever the selected fight card changes
   
     return (
-      <div>
+      // make parent overflow hidden so that the child container displaying the fights doesnt scroll.
+      <div className='overflow-x-hidden'>
         {/* Horizontal scroll container for fight cards */}
         <div className="scroll-container">
           {fightCards.map((fightCard) => (
@@ -69,11 +70,15 @@ export default function FightCardsScroller() {
           <div className='scroll-item'>TestItem1</div>
           <div className='scroll-item'>TestItem1</div>
           <div className='scroll-item'>TestItem1</div>
+          <div className='scroll-item'>TestItem2</div>
+          <div className='scroll-item'>TestItem3</div>
+          <div className='scroll-item'>TestItem4</div>
+          <div className='scroll-item'>TestItem5</div>
           
         </div>
   
-        {/* Display fights for the selected fight card */}
-        <div className="mt-20 space-y-10">
+        {/* Display fights section for the selected fight card */}
+        <div className="mt-20 px-6 sm:px-20 space-y-10 fights-container">
           {fights.map((fight) => (
             <div className="flex justify-between p-2 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
               <div className="w-1/2 text-center p-2 border-r border-gray-300">

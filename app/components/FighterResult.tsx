@@ -35,11 +35,11 @@ const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterN
         <div className="text-lg text-red-800 ">robbed?</div>
         <div className="text-xl">{name}</div>
         <LottieOnClick onClick={voteClick} />
-        <div className="text-sm inline-flex items-center"
+        <div className="text-sm sm:inline-flex items-center"
             onClick={voteClick}
         >
           {piggyvotes} PiggyVotes&nbsp;
-          <PlusCircleIcon width={20}/>
+          <PlusCircleIcon width={30}/>
         </div>
       </div>
     );

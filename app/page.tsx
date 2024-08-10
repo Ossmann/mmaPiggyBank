@@ -11,8 +11,11 @@ export default function Home() {
     <>
       <section
         id="home"
-        className="relative h-screen w-full flex flex-col justify-center items-center text-center space-y-10"
+        className="relative h-screen w-screen flex flex-col justify-center items-center text-center space-y-10 px-8 overflow-hidden"
       >
+
+        <div className='hidden sm:block'>
+
         {/* Guru Image */}
         <Image
           className="absolute -left-20 top-1/2 transform -translate-y-1/2 object-cover h-auto -z-10" // Positioning image to the left
@@ -36,8 +39,7 @@ export default function Home() {
           <LottiePlayer />
         </div>
 
-        {/* Clear floats */}
-        <div className="clear-both"></div>
+        </div>
 
         {/* Intro */}
         <Headline />
@@ -55,16 +57,12 @@ export default function Home() {
       {/* Fight Cards Section */}
       <section
         id="fightCards"
-        className="h-screen flex justify-center"
+        className="w-screen h-screen flex justify-center sm:px-40"
       >
         <FightCardsScroller />
-        Test
 
-        </section>
+      </section>
   
-
-      {/* Empty bottom space */}
-      <div className="p-16"></div>
       </>
   );
 }
