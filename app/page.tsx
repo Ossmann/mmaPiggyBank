@@ -22,8 +22,17 @@ export default function Home() {
           alt="The MMA Guru - Prey Eyes"
         />
 
+        {/* Jesus Image */}
+        <Image
+          className="absolute transform -translate-y-30 translate-x-80 -z-10 rotate-3" // Positioning image to the left
+          src="/MMA_guru_Jesus.png"
+          width={360}
+          height={360}
+          alt="The MMA Guru - Prey Eyes"
+        />
+
         {/* Piggy Bank LottieFile Animation */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-80"> {/* Positioning animation to the right */}
+        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-60"> {/* Positioning animation to the right */}
           <LottiePlayer />
         </div>
 
