@@ -32,6 +32,8 @@ import {
       SELECT
           f.fight_id,
           f.cardPosition,
+          f.fighter1_id,
+          f.fighter2_id, 
           CONCAT(f1.first_name, ' ', f1.last_name) AS fighter1_name,
           CONCAT(f2.first_name, ' ', f2.last_name) AS fighter2_name,
           f.result,

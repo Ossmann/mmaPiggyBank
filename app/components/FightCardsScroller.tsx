@@ -54,7 +54,7 @@ export default function FightCardsScroller() {
   
     return (
       // make parent overflow hidden so that the child container displaying the fights doesnt scroll.
-      <div className='overflow-x-hidden'>
+      <div className='overflow-x-hidden overflow-y-hidden'>
         {/* Horizontal scroll container for fight cards */}
         <div className="scroll-container">
           {fightCards.map((fightCard) => (
@@ -66,14 +66,6 @@ export default function FightCardsScroller() {
               {fightCard.name}
             </div>
           ))}
-          <div className='scroll-item'>TestItem1</div>
-          <div className='scroll-item'>TestItem1</div>
-          <div className='scroll-item'>TestItem1</div>
-          <div className='scroll-item'>TestItem1</div>
-          <div className='scroll-item'>TestItem2</div>
-          <div className='scroll-item'>TestItem3</div>
-          <div className='scroll-item'>TestItem4</div>
-          <div className='scroll-item'>TestItem5</div>
           
         </div>
   
@@ -83,7 +75,7 @@ export default function FightCardsScroller() {
             <div className="flex justify-between p-2 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
               <div className="w-1/2 text-center p-2 border-r border-gray-300">
               <FighterResult
-                isWinner={fight.winner === 1}
+                isWinner={fight.winner === fight.fighter1_id}
                 name={fight.fighter1_name}
                 fight_id={fight.fight_id}
                 fighterNum='fighter1'
@@ -93,7 +85,7 @@ export default function FightCardsScroller() {
               
               <div className="w-1/2 text-center p-2">
               <FighterResult
-                isWinner={fight.winner === 2}
+                isWinner={fight.winner === fight.fighter2_id}
                 name={fight.fighter2_name}
                 fight_id={fight.fight_id}
                 fighterNum='fighter2'

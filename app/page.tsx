@@ -57,7 +57,7 @@ export default function Home() {
       {/* Fight Cards Section */}
       <section
         id="fightCards"
-        className="w-screen h-screen flex justify-center sm:px-40"
+        className="w-screen flex justify-center sm:px-40"
       >
         <FightCardsScroller />
 

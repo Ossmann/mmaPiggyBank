@@ -39,7 +39,7 @@ const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterN
             onClick={voteClick}
         >
           {piggyvotes} PiggyVotes&nbsp;
-          <PlusCircleIcon width={30}/>
+            <PlusCircleIcon width={30} className='animate-ping-twice'/>
         </div>
       </div>
     );

@@ -29,7 +29,7 @@ export default function LottieOnClick({ onClick }: LottieOnClickProps) {
       <div className='relative sm:left-28 top-10' >
         {/* Image of the animation als standin dummy */}
           <Image
-          className='absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto animate-[wiggle_1s_ease-in-out_infinite]'
+          className='absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto'
               width={80}
               height={80}
               src={'/PiggyBank.svg'}
