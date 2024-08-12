@@ -51,18 +51,27 @@ body {
 
 .scroll-container {
   display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  background: linear-gradient(
+    to bottom right,
+    rgba(242, 218, 246, 1) 0%,   /* Light purple at the top left */
+    rgba(184, 176, 251, 0.8) 45%,  /* Medium purple */
+    rgba(104, 105, 192, 0.6) 80%,  /* Darker purple */
+    rgba(13, 24, 110, 0.4) 100%    /* Darkest purple at the bottom right */
+  );
 }
 
 .scroll-item {
   flex: 0 0 auto; /* Prevents items from shrinking */
-  width: 150px; /* Adjust width as needed */
+  width: 160px; /* Adjust width as needed */
   height: 80px; /* Adjust height as needed */
-  margin: 6px;
-  background-color: #f0f0f0;
-  color: #000;
+  margin: 8px;
+  background-color: rgb(236, 234, 255, 0.3);
+  color: white;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -73,6 +82,26 @@ body {
   transition: transform 0.2s ease;
   font-family: small;
   font-weight: bolder;
+  border: 1px solid rgb(236, 234, 255, 0.3);
+  box-shadow: 2px 4px 30px rgb(128, 121, 192);
+  backdrop-filter: blur(4.2px);
+  line-height: 1.2;
+  text-shadow:
+    /* Outer Glow */
+    0 0 1px rgba(242, 218, 246, 1),   /* Light purple glow */
+    0 0 2px rgba(184, 176, 251, 1),   /* Medium purple glow */
+    0 0 4px rgba(104, 105, 192, 1),   /* Darker purple glow */
+    0 0 6px rgba(13, 24, 110, 1),     /* Deep purple glow */
+    
+    /* Inner Shadow */
+    -1px -1px 2px rgba(174, 168, 246, 0.8),  /* Top-left inner shadow */
+    1px 1px 2px rgba(174, 168, 246, 0.8),    /* Bottom-right inner shadow */
+    
+    /* Stroke (Outline) */
+    -2px 0 0 rgba(174, 168, 246, 1),   /* Increased from -2px to -3px */
+    0 2px 0 rgba(174, 168, 246, 1),    /* Increased from 2px to 3px */
+    2px 0 0 rgba(174, 168, 246, 1),    /* Increased from 2px to 3px */
+    0 -2px 0 rgba(174, 168, 246, 1);   /* Increased from -2px to -3px */
 }
 
 .scroll-item:hover {

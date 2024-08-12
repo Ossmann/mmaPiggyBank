@@ -35,7 +35,7 @@ export default function Home() {
         />
 
         {/* Piggy Bank LottieFile Animation */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-60"> {/* Positioning animation to the right */}
+        <div className="absolute bottom-40 md:right-20 lg:right-64 bottom w-48"> {/* Positioning animation to the right */}
           <LottiePlayer />
         </div>
 
@@ -57,7 +57,7 @@ export default function Home() {
       {/* Fight Cards Section */}
       <section
         id="fightCards"
-        className="w-screen flex justify-center sm:px-40"
+        className="w-screen flex justify-center"
       >
         <FightCardsScroller />
 

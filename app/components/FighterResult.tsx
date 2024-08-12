@@ -24,18 +24,18 @@ const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterN
 
   if (isWinner) {
     return (
-      <div className="font-bold text-black text-center p-2">
-        <div className="text-lg text-red-800 ">WINNER</div>
+      <div className="font-bold text-center p-2 relative">
+        <div className="text-xl glow-text-turquoise absolute inset-x-0 top-[-20px]">WINNER</div>
         <div className="text-xl">{name}</div>
       </div>
     );
   } else {
     return (
-      <div className="text-gray-800 text-center p-2">
-        <div className="text-lg text-red-800 ">robbed?</div>
-        <div className="text-xl">{name}</div>
+      <div className="text-center p-2">
+        <div className="text-red-700 ">Was he robbed?</div>
+        <div className="font-bold text-xl">{name}</div>
         <LottieOnClick onClick={voteClick} />
-        <div className="text-sm sm:inline-flex items-center"
+        <div className="text-sm text-gray-200 sm:inline-flex items-center"
             onClick={voteClick}
         >
           {piggyvotes} PiggyVotes&nbsp;

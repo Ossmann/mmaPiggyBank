@@ -59,7 +59,7 @@ export default function FightCardsScroller() {
         <div className="scroll-container">
           {fightCards.map((fightCard) => (
             <div
-              className={`scroll-item ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''}`}  // Highlight the selected fight card
+              className={`scroll-item  ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''}`}  // Highlight the selected fight card
               key={fightCard.fight_card_id}
               onClick={() => setSelectedFightCardId(fightCard.fight_card_id)}  // Update the selected fight card ID when clicked
             >
@@ -70,10 +70,10 @@ export default function FightCardsScroller() {
         </div>
   
         {/* Display fights section for the selected fight card */}
-        <div className="mt-20 px-6 sm:px-20 space-y-10 fights-container">
+        <div className="mt-20 px-6 md:px-40 space-y-10 fights-container">
           {fights.map((fight) => (
-            <div className="flex justify-between p-2 bg-gray-100 rounded-lg shadow-md" key={fight.fight_id}>
-              <div className="w-1/2 text-center p-2 border-r border-gray-300">
+            <div className="flex justify-between rounded-lg border-2 items-center" key={fight.fight_id}>
+              <div className="w-1/2 text-center">
               <FighterResult
                 isWinner={fight.winner === fight.fighter1_id}
                 name={fight.fighter1_name}
