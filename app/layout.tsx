@@ -3,6 +3,12 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Head from "next/head";
+import { Barlow_Condensed } from 'next/font/google';
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: '500',
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +27,7 @@ export default function RootLayout({
       <Head>
         <link rel="icon" href="/favicon.jpg" />
       </Head>
-      <body className={`${inter.className} relative h-screen`}>
+      <body className={`${barlowCondensed.className} relative h-screen`}>
         
         <div className="relative z-10">
           {children}

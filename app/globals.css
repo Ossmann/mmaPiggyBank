@@ -48,7 +48,6 @@ body {
 }
 
 
-
 .scroll-container {
   display: flex;
   padding-top: 10px;
@@ -56,13 +55,8 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
-  background: linear-gradient(
-    to bottom right,
-    rgba(242, 218, 246, 0.8) 0%,   /* Light purple at the top left */
-    rgba(184, 176, 251, 0.4) 45%,  /* Medium purple */
-    rgba(104, 105, 192, 0.3) 80%,  /* Darker purple */
-    rgba(13, 24, 110, 0.1) 100%    /* Darkest purple at the bottom right */
-  );
+  border-top: 2px solid white; /* Adjust the border width and color as needed */
+  border-bottom: 2px solid white; /* Adjust the border width and color as needed */
 }
 
 .scroll-item {
@@ -70,7 +64,7 @@ body {
   width: 160px; /* Adjust width as needed */
   height: 80px; /* Adjust height as needed */
   margin: 12px;
-  background-color: rgb(236, 234, 255, 0.3);
+  background-color: rgba(254, 254, 254, 0.3);
   color: white;
   border-radius: 10px;
   display: flex;
@@ -80,23 +74,11 @@ body {
   scroll-snap-align: center;
   cursor: pointer;
   transition: transform 0.2s ease;
-  font-family: small;
   font-weight: bolder;
   border: 1px solid rgb(236, 234, 255, 0.3);
   box-shadow: 2px 2px 2px rgb(128, 121, 192);
   line-height: 1.2;
-  text-shadow:
-    /* Outer Glow */
-    0 0 1px rgba(242, 218, 246, 1),   /* Light purple glow */
-    0 0 2px rgba(184, 176, 251, 1),   /* Medium purple glow */
-    0 0 2px rgba(104, 105, 192, 1),   /* Darker purple glow */
-    0 0 2px rgba(13, 24, 110, 1),     /* Deep purple glow */
-    
-    /* Stroke (Outline) */
-    -2px 0 0 rgba(174, 168, 246, 1),   /* Increased from -2px to -3px */
-    0 2px 0 rgba(174, 168, 246, 1),    /* Increased from 2px to 3px */
-    2px 0 0 rgba(174, 168, 246, 1),    /* Increased from 2px to 3px */
-    0 -2px 0 rgba(174, 168, 246, 1);   /* Increased from -2px to -3px */
+
 }
 
 .scroll-item:hover {

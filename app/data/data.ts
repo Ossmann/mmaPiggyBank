@@ -96,23 +96,24 @@ export async function addVote(fighterNum: string, fight_id: number) {
 export async function getVoteLeader(fight_card_id: number): Promise<{ leader: string, piggyvotes: number } | null> {
   try {
     const result = await sql`
-      SELECT 
-          CONCAT(F.first_name, ' ', F.last_name) AS full_name,
-          GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) AS PiggyVotes
-      FROM 
-          Fight FT
-      JOIN 
-          Fighter F 
-      ON 
-          (FT.fighter1_id = F.fighter_id AND FT.fighter1_PiggyVotes >= FT.fighter2_PiggyVotes)
-          OR 
-          (FT.fighter2_id = F.fighter_id AND FT.fighter2_PiggyVotes > FT.fighter1_PiggyVotes)
-      WHERE 
-          FT.fight_card_id = ${fight_card_id}
-      ORDER BY 
-          GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) DESC
-      LIMIT 1;
-    `;
+    SELECT 
+        CONCAT(F.first_name, ' ', F.last_name) AS full_name,
+        GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) AS PiggyVotes
+    FROM 
+        Fight FT
+    JOIN 
+        Fighter F 
+    ON 
+        (FT.fighter1_id = F.fighter_id AND FT.fighter1_PiggyVotes >= FT.fighter2_PiggyVotes)
+        OR 
+        (FT.fighter2_id = F.fighter_id AND FT.fighter2_PiggyVotes > FT.fighter1_PiggyVotes)
+    WHERE 
+        FT.fight_card_id = ${fight_card_id}
+    ORDER BY 
+        GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) DESC
+    LIMIT 1;
+    ;
+    `
 
     // Accessing the rows from the result
     if (result.rows.length > 0) {
@@ -130,5 +131,17 @@ export async function getVoteLeader(fight_card_id: number): Promise<{ leader: st
   }
 }
 
+export async function getCardName(fight_card_id: number) {
+  try {
+    const result = await sql<{ name: string }>`
+      SELECT name
+      FROM Fightcard
+      WHERE fight_card_id = ${fight_card_id}
+    `;
 
-  
+    return result;
+  } catch (error) {
+    console.error("Error fetching cardName:", error);
+    return null;
+  }
+}

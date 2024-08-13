@@ -1,11 +1,10 @@
 'use client';
 
-import { getFightCards, getFights } from '../data/data';
-import { FightCard, Fight } from '../data/definitions';
+import { getFightCards, getFights, getCardName } from '../data/data';
+import { FightCard, Fight, VoteLeaderData } from '../data/definitions';
 import React, { useState, useEffect } from 'react';
 import FighterResult from './FighterResult';
 import VoteLeader from './VoteLeader';
-import { VoteLeaderData } from '../data/definitions';
 import { getVoteLeader } from '../data/data';
 
 
@@ -15,6 +14,7 @@ export default function FightCardsScroller() {
     const [fightCards, setFightCards] = useState<FightCard[]>([]);  // Type as FightCard[]
     const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(null);  // Type as number or null
     const [fights, setFights] = useState<Fight[]>([]);  // Type as Fight[]
+    const [cardName, setCardName] = useState<string>('');  // Type as string only, no null
     const [leaderData, setLeaderData] = useState<VoteLeaderData>(null);
 
   
@@ -42,20 +42,35 @@ export default function FightCardsScroller() {
   
     // Fetch fights when the selected fight card changes
     useEffect(() => {
-      const fetchFights = async () => {
+      const fetchFightsAndCardName = async () => {
         if (selectedFightCardId !== null) {
           try {
-            const data = await getFights(selectedFightCardId);
-            console.log('Fetched Fights:', data);
-            setFights(data);
+            // Fetch the fights and the card name concurrently
+            const [fightsData, cardNameData] = await Promise.all([
+              getFights(selectedFightCardId),
+              getCardName(selectedFightCardId)
+            ]);
+    
+            console.log('Fetched Fights:', fightsData);
+            setFights(fightsData);
+    
+            console.log('Fetched Card Name:', cardNameData);
+            if (cardNameData && cardNameData.rows.length > 0) {
+              setCardName(cardNameData.rows[0].name!);  // Assert that name is not null
+            } else {
+              // Handle the case where cardNameData is null or has no rows, if this is a possibility
+              setCardName(''); // or some other default value
+            }
+          
           } catch (error) {
-            console.error('Failed to fetch fights:', error);
+            console.error('Failed to fetch fights or card name:', error);
           }
         }
       };
-
-      fetchFights();
-    }, [selectedFightCardId]);  // Trigger fetching fights whenever the selected fight card changes  
+    
+      fetchFightsAndCardName();
+    }, [selectedFightCardId]);  // Trigger fetching both fights and card name whenever the selected fight card changes
+    
 
      // Fetch the fighter with the most votes when fight card changes
      useEffect(() => {
@@ -91,20 +106,24 @@ export default function FightCardsScroller() {
           ))}
         </div>
 
-        <div className='flex justify-center items-center'>
-          <VoteLeader
-            leader={leaderData?.leader ?? 'No Leader'}
-            piggyvotes={leaderData?.piggyvotes ?? 0}
-          />
+          {/* Show the fighter with currently the most votes */}
+        {/* Show the fighter with currently the most votes */}
+        <div className=' flex justify-center items-center '>
+            <VoteLeader leaderData={leaderData} />
+        </div>
+
+        <div className='hidden sm:block text-4xl text-center font-bold mt-10'>
+        {cardName}
         </div>
   
         {/* Display fights section for the selected fight card */}
-        <div className="mt-20 px-6 md:px-40 space-y-10 fights-container">
+        <div className="mt-10 px-6 md:px-40 space-y-10 fights-container">
           {fights.map((fight) => (
             <div className="flex justify-between rounded-lg border-2 items-center" key={fight.fight_id}>
               <div className="w-1/2 text-center">
               <FighterResult
                 isWinner={fight.winner === fight.fighter1_id}
+                result={fight.result}
                 name={fight.fighter1_name}
                 fight_id={fight.fight_id}
                 fighterNum='fighter1'
@@ -115,6 +134,7 @@ export default function FightCardsScroller() {
               <div className="w-1/2 text-center p-2">
               <FighterResult
                 isWinner={fight.winner === fight.fighter2_id}
+                result={fight.result}
                 name={fight.fighter2_name}
                 fight_id={fight.fight_id}
                 fighterNum='fighter2'

@@ -6,13 +6,14 @@ import { addVote } from '../data/data';
 
 interface FighterResultProps {
   isWinner: boolean;
+  result: string;
   name: string;
   piggyvotes: number;
   fighterNum: string;
   fight_id: number
 }
 
-const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id }: FighterResultProps) => {
+const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id }: FighterResultProps) => {
   const [piggyvotes, setPiggyvotes] = useState(initialPiggyVotes);
 
   const voteClick = () => { 
@@ -29,17 +30,24 @@ const FighterResult = ({ isWinner, name, piggyvotes: initialPiggyVotes, fighterN
         <div className="text-xl">{name}</div>
       </div>
     );
+  } else if (result == null) {
+    return (
+      <div className="text-center p-2">
+        <div className="font-bold text-xl">{name}</div>
+      </div>
+    );
   } else {
     return (
       <div className="text-center p-2">
-        <div className="text-red-700 ">Was he robbed?</div>
+        <div className="text-red-700">Was he robbed?</div>
         <div className="font-bold text-xl">{name}</div>
         <LottieOnClick onClick={voteClick} />
-        <div className="text-sm text-gray-200 sm:inline-flex items-center"
-            onClick={voteClick}
+        <div
+          className="text-sm text-gray-200 sm:inline-flex items-center"
+          onClick={voteClick}
         >
           {piggyvotes} PiggyVotes&nbsp;
-            <PlusCircleIcon width={30} className='animate-ping-twice'/>
+          <PlusCircleIcon width={30} className="animate-ping-twice" />
         </div>
       </div>
     );
