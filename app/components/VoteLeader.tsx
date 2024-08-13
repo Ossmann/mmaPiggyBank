@@ -14,7 +14,7 @@ const VoteLeader = ({ leaderData }: VoteLeaderProps) => {
 
     if (piggyvotes != 0) {
         return (
-            <div className="p-12 bg-gray-200 w-1/2 mt-10 w-1/2 justify-center text-center items-center flex flex-row text-black space-x-10">
+            <div className="p-12 bg-gray-200 w-96 sm:w-1/2 mt-10 w-1/2 justify-center text-center items-center flex flex-row text-black space-x-10">
                 <div className="flex flex-col justify-center items-center">
                     {Array.from({ length: piggyvotes }).map((_, index) => (
                         <Image
@@ -36,8 +36,8 @@ const VoteLeader = ({ leaderData }: VoteLeaderProps) => {
                             src={'/PiggyBank.svg'}
                             alt="Piggy Bank"
                     />
-                    <div className="text-white text-3xl font-bold glow-text-purple">Piggy of the Card</div>
-                    <div className="font-bold text-3xl">{leader}</div>
+                    <div className="text-white text-xl sm:text-3xl font-bold glow-text-purple">Piggy of the Card</div>
+                    <div className="font-bold text-xl sm:text-3xl">{leader}</div>
                 </div>
             </div>
         );
