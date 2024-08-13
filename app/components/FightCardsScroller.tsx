@@ -4,6 +4,9 @@ import { getFightCards, getFights } from '../data/data';
 import { FightCard, Fight } from '../data/definitions';
 import React, { useState, useEffect } from 'react';
 import FighterResult from './FighterResult';
+import VoteLeader from './VoteLeader';
+import { VoteLeaderData } from '../data/definitions';
+import { getVoteLeader } from '../data/data';
 
 
 
@@ -12,6 +15,8 @@ export default function FightCardsScroller() {
     const [fightCards, setFightCards] = useState<FightCard[]>([]);  // Type as FightCard[]
     const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(null);  // Type as number or null
     const [fights, setFights] = useState<Fight[]>([]);  // Type as Fight[]
+    const [leaderData, setLeaderData] = useState<VoteLeaderData>(null);
+
   
     // Fetch fight cards when the component mounts
     useEffect(() => {
@@ -48,9 +53,27 @@ export default function FightCardsScroller() {
           }
         }
       };
-  
+
       fetchFights();
-    }, [selectedFightCardId]);  // Trigger fetching fights whenever the selected fight card changes
+    }, [selectedFightCardId]);  // Trigger fetching fights whenever the selected fight card changes  
+
+     // Fetch the fighter with the most votes when fight card changes
+     useEffect(() => {
+      const fetchVoteLeader = async () => {
+        if (selectedFightCardId !== null) {
+          try {
+            const data = await getVoteLeader(selectedFightCardId);
+            console.log('Fetched VoteLeader:', data);
+            setLeaderData(data);
+          } catch (error) {
+            console.error('Failed to fetch VotesLeader:', error);
+          }
+        }
+      };   
+
+    fetchVoteLeader();
+  }, [selectedFightCardId]);
+
   
     return (
       // make parent overflow hidden so that the child container displaying the fights doesnt scroll.
@@ -66,7 +89,13 @@ export default function FightCardsScroller() {
               {fightCard.name}
             </div>
           ))}
-          
+        </div>
+
+        <div className='flex justify-center items-center'>
+          <VoteLeader
+            leader={leaderData?.leader ?? 'No Leader'}
+            piggyvotes={leaderData?.piggyvotes ?? 0}
+          />
         </div>
   
         {/* Display fights section for the selected fight card */}

@@ -13,15 +13,19 @@ export default function Home() {
         id="home"
         className="relative h-screen w-screen flex flex-col justify-center items-center text-center space-y-10 px-8 overflow-hidden"
       >
+        <div className='absolute text-xs bg-gray-400 p-2 rounded-md border-solid border-2 border-gray-600 top-8 left-8'>
+          Under construction
+        </div>
 
         <div className='hidden sm:block'>
+        
 
         {/* Guru Image */}
         <Image
-          className="absolute -left-20 top-1/2 transform -translate-y-1/2 object-cover h-auto -z-10" // Positioning image to the left
-          src="/GuruPortrait.png"
-          width={480}
-          height={480}
+          className="absolute -left-20 top-40 transform object-cover h-auto -z-10" // Positioning image to the left
+          src="/GuruPortrait_lean.png"
+          width={600}
+          height={600}
           alt="The MMA Guru - Prey Eyes"
         />
 

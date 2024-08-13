@@ -45,3 +45,8 @@ export type FighterFight = {
     PiggyVotes: number;  
 };
 
+export type VoteLeaderData = {
+    leader: string;
+    piggyvotes: number;
+  } | null;
+

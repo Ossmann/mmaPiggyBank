@@ -93,4 +93,42 @@ export async function addVote(fighterNum: string, fight_id: number) {
   }
 }
 
+export async function getVoteLeader(fight_card_id: number): Promise<{ leader: string, piggyvotes: number } | null> {
+  try {
+    const result = await sql`
+      SELECT 
+          CONCAT(F.first_name, ' ', F.last_name) AS full_name,
+          GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) AS PiggyVotes
+      FROM 
+          Fight FT
+      JOIN 
+          Fighter F 
+      ON 
+          (FT.fighter1_id = F.fighter_id AND FT.fighter1_PiggyVotes >= FT.fighter2_PiggyVotes)
+          OR 
+          (FT.fighter2_id = F.fighter_id AND FT.fighter2_PiggyVotes > FT.fighter1_PiggyVotes)
+      WHERE 
+          FT.fight_card_id = ${fight_card_id}
+      ORDER BY 
+          GREATEST(FT.fighter1_PiggyVotes, FT.fighter2_PiggyVotes) DESC
+      LIMIT 1;
+    `;
+
+    // Accessing the rows from the result
+    if (result.rows.length > 0) {
+      return {
+        leader: result.rows[0].full_name,
+        piggyvotes: result.rows[0].piggyvotes
+      };
+    } else {
+      return null; // Return null if no data is found
+    }
+
+  } catch (error) {
+    console.error("Error fetching vote leader:", error);
+    return null;
+  }
+}
+
+
   
