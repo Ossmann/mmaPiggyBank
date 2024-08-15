@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <body className={`${barlowCondensed.className} relative h-screen`}>
         
