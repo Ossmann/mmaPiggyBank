@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { useEffect } from 'react';
 
-const API_URL = 'https://mmaapi.p.rapidapi.com/api/mma/unique-tournament/19906/';
+const API_URL = 'https://mmaapi.p.rapidapi.com/api/mma/unique-tournament/19906/main-events/last/1';
 const API_KEY = 'c1dad428bbmsh5e5394b0b725461p153502jsn65a9f852101b'; // Use your actual API key here
 
 const fetchMmaEvents = async () => {

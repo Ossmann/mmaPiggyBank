@@ -15,8 +15,18 @@ export default function FightCardsScroller() {
     const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(null);  // Type as number or null
     const [fights, setFights] = useState<Fight[]>([]);  // Type as Fight[]
     const [cardName, setCardName] = useState<string>('');  // Type as string only, no null
-    const [leaderData, setLeaderData] = useState<VoteLeaderData>(null);
+    const [leaderData, setLeaderData] = useState<VoteLeaderData>(null); //useState for the component that shows how got the most votes on a card
+    // const [timesVoted, setTimesVoted] = useState(""); //useState for local storage so every User can only vote once
+  
+    // // useEffect for localStorage voting once
+    // useEffect(() => {
+    //   let value
+    //   // Get the value from local storage if it exists
+    //   value = localStorage.getItem("timesVoted") || ""
+    //   setTimesVoted(value)
+    // }, [])
 
+    
   
     // Fetch fight cards when the component mounts
     useEffect(() => {

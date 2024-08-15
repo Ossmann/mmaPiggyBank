@@ -16,11 +16,23 @@ interface FighterResultProps {
 const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id }: FighterResultProps) => {
   const [piggyvotes, setPiggyvotes] = useState(initialPiggyVotes);
 
+  //handel when someone clicked to vote
   const voteClick = () => { 
     console.log('Vote Clicked!');  // Simple log to test
-    addVote(fighterNum, fight_id);
-    setPiggyvotes(piggyvotes + 1);
-    console.log('Called Add Vote function');
+
+    const timesVoted = parseInt(localStorage.getItem('timesVoted') || '0', 10); //get times Voted from localStorage
+
+    //check if someone voted 2 times they cant vote anymore
+    if (timesVoted < 2) {
+      localStorage.setItem('timesVoted', (timesVoted + 1).toString()); // Increment the vote count in localStorage
+
+      addVote(fighterNum, fight_id); //update database
+      setPiggyvotes(piggyvotes + 1); //update visual
+      console.log('Called Add Vote function');
+    } else {
+      alert('Max number of votes reached. You have already voted for 2 fights on this card.');
+      return;
+    }
   };
 
   if (isWinner) {
