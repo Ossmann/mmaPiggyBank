@@ -66,6 +66,10 @@ export default function Home() {
         <FightCardsScroller />
 
       </section>
+
+      <div className='text-sm p-8 text-right'>
+        <a href='/Contact'>Contact</a>
+      </div>
   
       </>
   );
