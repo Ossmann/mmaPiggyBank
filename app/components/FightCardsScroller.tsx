@@ -2,7 +2,7 @@
 
 import { getFightCards, getFights, getCardName } from '../data/data';
 import { FightCard, Fight, VoteLeaderData } from '../data/definitions';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import FighterResult from './FighterResult';
 import VoteLeader from './VoteLeader';
 import { getVoteLeader } from '../data/data';
@@ -12,48 +12,43 @@ import { getVoteLeader } from '../data/data';
 export default function FightCardsScroller() {
     // Use state hooks with explicit types to call and update the values for each selected card
     const [fightCards, setFightCards] = useState<FightCard[]>([]);  // Type as FightCard[]
-    const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(null);  // Type as number or null
+    const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(3);  // Type as number or null, 3 by default
     const [fights, setFights] = useState<Fight[]>([]);  // Type as Fight[]
     const [cardName, setCardName] = useState<string>('');  // Type as string only, no null
     const [leaderData, setLeaderData] = useState<VoteLeaderData>(null); //useState for the component that shows how got the most votes on a card
-    // const [timesVoted, setTimesVoted] = useState(""); //useState for local storage so every User can only vote once
-  
-    // // useEffect for localStorage voting once
-    // useEffect(() => {
-    //   let value
-    //   // Get the value from local storage if it exists
-    //   value = localStorage.getItem("timesVoted") || ""
-    //   setTimesVoted(value)
-    // }, [])
 
-    
   
-    // Fetch fight cards when the component mounts
-    useEffect(() => {
+      // Fetch fight cards when the component mounts
+      useEffect(() => {
         console.log('Postgres URL:', process.env.POSTGRES_URL);
 
-      const fetchFightCards = async () => {
-        try {
-          const data = await getFightCards();
-          console.log('Fetched FightCard:', data); // Debugging log
-          setFightCards(data);
-  
-          // Set the first fight card as selected by default if available
-          if (data.length > 0) {
-            setSelectedFightCardId(data[0].fight_card_id);
-          }
-        } catch (error) {
-          console.error('Failed to fetch fight cards:', error);
-        }
-      };
-  
-      fetchFightCards();
-    }, []);
+        const fetchFightCards = async () => {
+            try {
+                const data = await getFightCards();
+                console.log('Fetched FightCard:', data); // Debugging log
+                setFightCards(data);
+
+                // Only set the selected fight card ID if it's not already set to something other than 3
+                if (data.length > 0 && selectedFightCardId === 3) {
+                    const defaultCard = data.find(card => card.fight_card_id === 3);
+                    if (!defaultCard) {
+                        // If there's no card with ID 4, set the first card in the list
+                        setSelectedFightCardId(data[0].fight_card_id);
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to fetch fight cards:', error);
+            }
+        };
+
+        fetchFightCards();
+      }, []);  // Empty dependency array to run only on component mount
   
     // Fetch fights when the selected fight card changes
     useEffect(() => {
       const fetchFightsAndCardName = async () => {
         if (selectedFightCardId !== null) {
+          console.log('Test ID fetching:', selectedFightCardId);
           try {
             // Fetch the fights and the card name concurrently
             const [fightsData, cardNameData] = await Promise.all([
@@ -122,7 +117,7 @@ export default function FightCardsScroller() {
             <VoteLeader leaderData={leaderData} />
         </div>
 
-        <div className='hidden sm:block text-4xl text-center font-bold mt-10'>
+        <div className='text-2xl sm:text-4xl text-center font-bold mt-10'>
         {cardName}
         </div>
   
