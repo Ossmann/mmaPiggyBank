@@ -4,6 +4,7 @@ import "./globals.css";
 import Image from "next/image";
 import Head from "next/head";
 import { Barlow_Condensed } from 'next/font/google';
+import VisitorCount from "./components/VisitorCount";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
@@ -30,6 +31,8 @@ export default function RootLayout({
       <body className={`${barlowCondensed.className} relative h-screen`}>
         
         <div className="relative z-10">
+          <VisitorCount />
+
           {children}
         </div>
 

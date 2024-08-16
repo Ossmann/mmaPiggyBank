@@ -7,6 +7,7 @@ import {
     Fight
   } from './definitions';
 
+  
   export async function getFightCards() {
     try {
       const fightCardsData = await sql<FightCard>`

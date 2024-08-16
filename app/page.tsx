@@ -1,10 +1,9 @@
-import Navbar from './components/navbar';
-import Head from "next/head";
 import LottiePlayer from "./components/LottiePlayer";
 import Headline from "./components/headline";
 import Image from 'next/image';
 import FightCardsScroller from './components/FightCardsScroller';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+
 
 export default function Home() {
   return (
