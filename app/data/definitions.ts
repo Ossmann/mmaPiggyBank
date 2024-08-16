@@ -25,7 +25,7 @@ export type FightCard = {
 export type Fight = {
     fight_id: number;
     fight_card_id: number; // Ensure this is part of the SQL result if needed
-    cardPosition: number;
+    cardposition: number;
     fighter1_name: string;
     fighter1_id: number;
     fighter1_piggyvotes: number;

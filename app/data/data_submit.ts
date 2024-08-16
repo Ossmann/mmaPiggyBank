@@ -2,7 +2,7 @@
 
 import { z } from 'zod';
 import { sql } from '@vercel/postgres'; 
-import Form from '../CMS/page';
+import Form from '../components/internal/UpdateFightsForm';
 
 const FormSchema = z.object({
     result: z.string(),
