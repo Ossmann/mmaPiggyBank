@@ -42,7 +42,7 @@ const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, 
         <div className="text-xl">{name}</div>
       </div>
     );
-  } else if (result == null) {
+  } else if (result == null || result === '') {
     return (
       <div className="text-center p-2">
         <div className="font-bold text-xl">{name}</div>

@@ -20,18 +20,65 @@ const FormSchema = z.object({
     }
   }
 
-//function to update fights
+  //zod schema of the CMS Form
+  const FightSchema = z.object({
+    fight_id: z.number(),
+    cardposition: z.number(),
+    fighter1_piggyvotes: z.number(),
+    fighter2_piggyvotes: z.number(),
+    winner: z.number(),
+    result: z.string(),
+});
+
+
+
+
+// Function to update fights
 export async function updateFightDB(formData: FormData) {
-    const { result } = FormSchema.parse({
-      result: formData.get('result'),
-    });
+  try {
+      // Parse all necessary fields from the formData using the FightSchema
+      const {
+          fight_id,
+          cardposition,
+          fighter1_piggyvotes,
+          fighter2_piggyvotes,
+          winner,
+          result,
+      } = FightSchema.parse({
+          fight_id: Number(formData.get('fight_id')),
+          cardposition: Number(formData.get('cardposition')),
+          fighter1_piggyvotes: Number(formData.get('fighter1_piggyvotes')),
+          fighter2_piggyvotes: Number(formData.get('fighter2_piggyvotes')),
+          winner: Number(formData.get('winner')),
+          result: String(formData.get('result')),
+      });
 
-console.log('Parsed Data:', { result }); // Log parsed data
+      // Log the parsed values to ensure they are correct
+      console.log('Parsed values:', {
+          fight_id,
+          cardposition,
+          fighter1_piggyvotes,
+          fighter2_piggyvotes,
+          winner,
+          result,
+      });
 
-await sql`
-        INSERT INTO Fight (result)
-        VALUES (${result})
-    `;
+      // Construct the SQL update query to update the Fight table
+      const updateResult = await sql`
+          UPDATE Fight
+          SET
+              cardposition = ${cardposition},
+              fighter1_piggyvotes = ${fighter1_piggyvotes},
+              fighter2_piggyvotes = ${fighter2_piggyvotes},
+              winner = ${winner},
+              result = ${result}
+          WHERE
+              fight_id = ${fight_id}
+      `;
 
+      // Log the result of the SQL query execution
+      console.log('Update result:', updateResult);
+  } catch (error) {
+      console.error('Error updating fight:', error);
+  }
 }
-

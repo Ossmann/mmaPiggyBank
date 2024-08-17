@@ -8,6 +8,10 @@ interface UpdateFightsFormProps {
 export default function UpdateFightsForm({ existingFight }: UpdateFightsFormProps) {
   return (
     <form action={updateFightDB}>
+      
+      {/* hidden component to pass the fight_id */}
+      <input type="hidden" name="fight_id" value={existingFight.fight_id} />
+
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
 
       <div className="flex pb-4 text-gray-400 items-center space-x-2">
@@ -41,8 +45,8 @@ export default function UpdateFightsForm({ existingFight }: UpdateFightsFormProp
           <div className="relative">
             <input
               type="number"
-              id="cardPosition"
-              name="cardPosition"
+              id="cardposition"
+              name="cardposition"
               placeholder={existingFight ? existingFight.cardposition.toString() : "1"}
               className="p-2 border border-gray-300 rounded-md text-black w-20"
             />
@@ -89,8 +93,8 @@ export default function UpdateFightsForm({ existingFight }: UpdateFightsFormProp
           <div className="relative">
             <input
               type="number"
-              id="fighter1_PiggyVotes"
-              name="fighter1_PiggyVotes"
+              id="fighter1_piggyvotes"
+              name="fighter1_piggyvotes"
               placeholder={existingFight ? existingFight.fighter1_piggyvotes.toString() : "0"}
               className="p-2 border border-gray-300 rounded-md text-black w-20"
             />
@@ -105,8 +109,8 @@ export default function UpdateFightsForm({ existingFight }: UpdateFightsFormProp
           <div className="relative">
             <input
               type="number"
-              id="fighter2_PiggyVotes"
-              name="fighter2_PiggyVotes"
+              id="fighter2_piggyvotes"
+              name="fighter2_piggyvotes"
               placeholder={existingFight ? existingFight.fighter2_piggyvotes.toString() : "0"}
               className="p-2 border border-gray-300 rounded-md text-black w-20"
             />
