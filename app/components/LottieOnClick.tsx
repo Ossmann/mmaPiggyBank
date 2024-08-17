@@ -26,7 +26,7 @@ export default function LottieOnClick({ onClick }: LottieOnClickProps) {
     };
 
     return (
-      <div className='relative sm:left-28 top-10' >
+      <div className='relative sm:left-28 top-12 sm:top-8' >
         {/* Image of the animation als standin dummy */}
           <Image
           className='absolute top-0 bottom-0 left-0 right-0 mx-auto my-auto'

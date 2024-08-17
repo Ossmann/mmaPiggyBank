@@ -89,6 +89,8 @@ export default function FightCardsScroller() {
     fetchVoteLeader();
   }, [selectedFightCardId]);
 
+  console.log('FightCardID', selectedFightCardId);
+
   
     return (
       // make parent overflow hidden so that the child container displaying the fights doesnt scroll.
@@ -131,7 +133,7 @@ export default function FightCardsScroller() {
                 fight_id={fight.fight_id}
                 fighterNum='fighter1'
                 piggyvotes={fight.fighter1_piggyvotes}
-                fight_card_id={cardNameDate!.fight_card_id}
+                fight_card_id={selectedFightCardId!}
               />
               </div>
               
@@ -143,7 +145,7 @@ export default function FightCardsScroller() {
                 fight_id={fight.fight_id}
                 fighterNum='fighter2'
                 piggyvotes={fight.fighter2_piggyvotes}
-                fight_card_id={cardNameDate!.fight_card_id}
+                fight_card_id={selectedFightCardId!}
 
               />
               </div>
