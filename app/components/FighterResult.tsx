@@ -10,40 +10,43 @@ interface FighterResultProps {
   name: string;
   piggyvotes: number;
   fighterNum: string;
-  fight_id: number
+  fight_id: number;
+  fight_card_id: number
 }
 
-const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id }: FighterResultProps) => {
+const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, fighterNum, fight_id, fight_card_id }: FighterResultProps) => {
   const [piggyvotes, setPiggyvotes] = useState(initialPiggyVotes);
 
-  //handel when someone clicked to vote
-  const voteClick = () => { 
+  const voteClick = () => {
     console.log('Vote Clicked!');  // Simple log to test
 
-    const timesVoted = parseInt(localStorage.getItem('timesVoted') || '0', 10); //get times Voted from localStorage
+    const timesVotedKey = `timesVoted_${fight_card_id}`; // Create a unique key for each fight card
+    let timesVoted = parseInt(localStorage.getItem(timesVotedKey) || '0', 10); // Get the number of votes for this fight card
 
-    //check if someone voted 2 times they cant vote anymore
+    // Check if the user has already voted 2 times for this fight card
     if (timesVoted < 2) {
-      localStorage.setItem('timesVoted', (timesVoted + 1).toString()); // Increment the vote count in localStorage
+      timesVoted += 1; // Increment the vote count
+      localStorage.setItem(timesVotedKey, timesVoted.toString()); // Update the vote count for this fight card
 
-      addVote(fighterNum, fight_id); //update database
-      setPiggyvotes(piggyvotes + 1); //update visual
+      addVote(fighterNum, fight_id); // Update the database
+      setPiggyvotes(piggyvotes + 1); // Update the visual count
       console.log('Called Add Vote function');
     } else {
-      alert('Max number of votes reached. You have already voted for 2 fights on this card.');
+      alert('Max number of votes reached. You have already voted 2 times on this card.');
       return;
     }
   };
 
+
   return (
     <>
       {result == null || result === '' ? (
-        <div className="font-bold text-center p-3 relative">
-          <div className="text-xl ">{name}</div>
+        <div className="font-bold text-center py-3 relative">
+          <div className="text-xl whitespace-nowrap inline-block">{name}</div>
         </div>
       ) : (
-        <div className="font-bold text-center p-8 relative">
-          <div className="text-xl ">{name}</div>
+        <div className="font-bold text-center py-8 relative">
+            <div className="text-xl whitespace-nowrap inline-block">{name}</div>
           <div className="absolute inset-x-0">
             <LottieOnClick onClick={voteClick} />
             <div

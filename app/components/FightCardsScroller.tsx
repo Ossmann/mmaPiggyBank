@@ -131,6 +131,7 @@ export default function FightCardsScroller() {
                 fight_id={fight.fight_id}
                 fighterNum='fighter1'
                 piggyvotes={fight.fighter1_piggyvotes}
+                fight_card_id={cardNameDate!.fight_card_id}
               />
               </div>
               
@@ -142,6 +143,8 @@ export default function FightCardsScroller() {
                 fight_id={fight.fight_id}
                 fighterNum='fighter2'
                 piggyvotes={fight.fighter2_piggyvotes}
+                fight_card_id={cardNameDate!.fight_card_id}
+
               />
               </div>
             </div>
