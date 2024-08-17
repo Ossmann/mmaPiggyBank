@@ -132,17 +132,19 @@ export async function getVoteLeader(fight_card_id: number): Promise<{ leader: st
   }
 }
 
-export async function getCardName(fight_card_id: number) {
+export async function getCardNameDate(fight_card_id: number) {
   try {
-    const result = await sql<{ name: string }>`
-      SELECT name
+    const result = await sql<FightCard>`
+      SELECT name, date, location
       FROM Fightcard
       WHERE fight_card_id = ${fight_card_id}
     `;
 
-    return result;
+    // Assuming you always expect a single result
+    console.log('DATE name Result?', result);
+    return result.rows[0];
   } catch (error) {
-    console.error("Error fetching cardName:", error);
+    console.error("Error fetching cardName or Date:", error);
     return null;
   }
 }

@@ -35,35 +35,40 @@ const FighterResult = ({ isWinner, result, name, piggyvotes: initialPiggyVotes, 
     }
   };
 
-  if (isWinner) {
-    return (
-      <div className="font-bold text-center p-2 relative">
-        <div className="text-xl glow-text-turquoise absolute inset-x-0 top-[-20px]">WINNER</div>
-        <div className="text-xl">{name}</div>
-      </div>
-    );
-  } else if (result == null || result === '') {
-    return (
-      <div className="text-center p-2">
-        <div className="font-bold text-xl">{name}</div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="text-center p-2">
-        <div className="text-red-700">Was he robbed?</div>
-        <div className="font-bold text-xl">{name}</div>
-        <LottieOnClick onClick={voteClick} />
-        <div
-          className="text-sm text-gray-200 sm:inline-flex items-center"
-          onClick={voteClick}
-        >
-          {piggyvotes} PiggyVotes&nbsp;
-          <PlusCircleIcon width={30} className="animate-ping-twice" />
+  return (
+    <>
+      {result == null || result === '' ? (
+        <div className="font-bold text-center p-3 relative">
+          <div className="text-xl ">{name}</div>
         </div>
-      </div>
-    );
-  }
-};
-
+      ) : (
+        <div className="font-bold text-center p-8 relative">
+          <div className="text-xl ">{name}</div>
+          <div className="absolute inset-x-0">
+            <LottieOnClick onClick={voteClick} />
+            <div
+              className="text-sm text-gray-200 sm:inline-flex items-center"
+              onClick={voteClick}
+            >
+              {piggyvotes} PiggyVotes&nbsp;
+              <PlusCircleIcon width={30} className="animate-ping-twice" />
+            </div>
+          </div>
+  
+          {isWinner ? (
+            <div className="text-xl glow-text-turquoise absolute inset-x-0 top-[2px]">
+              WINNER
+            </div>
+          ) : (
+            <div className="text-red-700 absolute inset-x-0 top-[4px]">
+              Was he robbed?
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+  
+}
+  
 export default FighterResult;

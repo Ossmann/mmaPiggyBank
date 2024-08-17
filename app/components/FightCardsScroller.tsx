@@ -1,6 +1,6 @@
 'use client';
 
-import { getFightCards, getFights, getCardName } from '../data/data';
+import { getFightCards, getFights, getCardNameDate } from '../data/data';
 import { FightCard, Fight, VoteLeaderData } from '../data/definitions';
 import React, { useState, useEffect, useRef } from 'react';
 import FighterResult from './FighterResult';
@@ -14,7 +14,7 @@ export default function FightCardsScroller() {
     const [fightCards, setFightCards] = useState<FightCard[]>([]);  // Type as FightCard[]
     const [selectedFightCardId, setSelectedFightCardId] = useState<number | null>(3);  // Type as number or null, 3 by default
     const [fights, setFights] = useState<Fight[]>([]);  // Type as Fight[]
-    const [cardName, setCardName] = useState<string>('');  // Type as string only, no null
+    const [cardNameDate, setCardNameDate] = useState<FightCard | null>(null);
     const [leaderData, setLeaderData] = useState<VoteLeaderData>(null); //useState for the component that shows how got the most votes on a card
 
   
@@ -50,22 +50,17 @@ export default function FightCardsScroller() {
         if (selectedFightCardId !== null) {
           console.log('Test ID fetching:', selectedFightCardId);
           try {
-            // Fetch the fights and the card name concurrently
-            const [fightsData, cardNameData] = await Promise.all([
+            // Fetch the fights and the card name and the dateconcurrently
+            const [fightsData, cardNameDateData] = await Promise.all([
               getFights(selectedFightCardId),
-              getCardName(selectedFightCardId)
+              getCardNameDate(selectedFightCardId)
             ]);
     
             console.log('Fetched Fights:', fightsData);
             setFights(fightsData);
+            setCardNameDate(cardNameDateData!);
     
-            console.log('Fetched Card Name:', cardNameData);
-            if (cardNameData && cardNameData.rows.length > 0) {
-              setCardName(cardNameData.rows[0].name!);  // Assert that name is not null
-            } else {
-              // Handle the case where cardNameData is null or has no rows, if this is a possibility
-              setCardName(''); // or some other default value
-            }
+            console.log('Fetched Card Name and Date:', cardNameDateData);
           
           } catch (error) {
             console.error('Failed to fetch fights or card name:', error);
@@ -111,14 +106,18 @@ export default function FightCardsScroller() {
           ))}
         </div>
 
-          {/* Show the fighter with currently the most votes */}
-        {/* Show the fighter with currently the most votes */}
-        <div className=' flex justify-center items-center '>
-            <VoteLeader leaderData={leaderData} />
-        </div>
+        {/* Show the fighter with currently the most votes if the event is past */}
+        {
+          cardNameDate && cardNameDate.date && new Date(cardNameDate.date) < new Date() && (
+            <div className="flex justify-center items-center">
+              <VoteLeader leaderData={leaderData} />
+            </div>
+          )
+        }
+        
 
         <div className='text-2xl sm:text-4xl text-center font-bold mt-10'>
-        {cardName}
+          {cardNameDate ? cardNameDate.name : 'Loading...'}
         </div>
   
         {/* Display fights section for the selected fight card */}
