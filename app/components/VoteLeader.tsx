@@ -16,7 +16,9 @@ const VoteLeader = ({ leaderData }: VoteLeaderProps) => {
         return (
             <div className="p-12 bg-gray-200 w-96 sm:w-1/2 mt-10 w-1/2 justify-center text-center items-center flex flex-row text-black space-x-10">
                 <div className="flex flex-col justify-center items-center">
-                    {Array.from({ length: piggyvotes }).map((_, index) => (
+                {Array.from({ length: piggyvotes })
+                    .slice(0, 15) // Limit the number of images to 15
+                    .map((_, index) => (
                         <Image
                             key={index}
                             className=""

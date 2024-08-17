@@ -114,7 +114,6 @@ export default function FightCardsScroller() {
             </div>
           )
         }
-        
 
         <div className='text-2xl sm:text-4xl text-center font-bold mt-10'>
           {cardNameDate ? cardNameDate.name : 'Loading...'}
