@@ -52,7 +52,7 @@ import {
       WHERE 
           f.fight_card_id = ${fightCardID}
       ORDER BY 
-          f.cardPosition DESC;
+          f.cardPosition ASC;
     `;
     console.log('Query Result:', fightsData.rows); // Add debugging log to verify query result
 
