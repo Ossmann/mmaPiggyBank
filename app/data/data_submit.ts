@@ -36,6 +36,8 @@ const FormSchema = z.object({
 // Function to update fights
 export async function updateFightDB(formData: FormData) {
   try {
+    console.log("Inside updateFightDB function"); // Debugging log
+
       // Parse all necessary fields from the formData using the FightSchema
       const {
           fight_id,

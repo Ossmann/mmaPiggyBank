@@ -141,7 +141,6 @@ export async function getCardNameDate(fight_card_id: number) {
     `;
 
     // Assuming you always expect a single result
-    console.log('DATE name Result?', result);
     return result.rows[0];
   } catch (error) {
     console.error("Error fetching cardName or Date:", error);

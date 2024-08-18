@@ -19,14 +19,20 @@ export default function UpdateFightsForm({ existingFight }: UpdateFightsFormProp
     setSuccessMessage('');
     setErrorMessage('');
 
-    // Replace this with your actual form submission logic
     try {
-      // Example: await updateFightDB(yourFormData);
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
+      // Create a FormData object from the form
+      const formData = new FormData(event.currentTarget);
+
+      // Call the updateFightDB function and pass the FormData to it
+      await updateFightDB(formData);
+
+      // Set success message if update is successful
       setSuccessMessage('Fight updated successfully!');
     } catch (error) {
+      // Set error message if update fails
       setErrorMessage('Failed to update the fight.');
     } finally {
+      // Reset submitting state
       setIsSubmitting(false);
     }
   };
