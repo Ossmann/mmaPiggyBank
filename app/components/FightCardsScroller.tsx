@@ -110,7 +110,7 @@ export default function FightCardsScroller() {
 
         {/* Show the fighter with currently the most votes if the event is past */}
         {
-          cardNameDate && cardNameDate.date && new Date(cardNameDate.date).getTime() + 50200000 < new Date().getTime() && (
+          cardNameDate && cardNameDate.date && new Date(cardNameDate.date).getTime() + 80200000 < new Date().getTime() && (
             <div className="flex justify-center items-center">
               <VoteLeader leaderData={leaderData} />
             </div>
