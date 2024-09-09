@@ -38,8 +38,16 @@ const VoteLeader = ({ leaderData }: VoteLeaderProps) => {
                             src={'/PiggyBank.svg'}
                             alt="Piggy Bank"
                     />
+                    {/* <Image
+                            className="mt-4 rounded-lg !mb-4"
+                            width={200}
+                            height={200}
+                            src={'/padilla.jpeg'}
+                            alt="Piggy Bank"
+                    /> */}
                     <div className="text-white text-xl sm:text-3xl font-bold glow-text-purple">Piggy of the Card</div>
                     <div className="font-bold text-xl sm:text-3xl">{leader}</div>
+                    {/* <div className="text-zinc-600">Vote at: www.GuruPiggyBank.com</div> */}
                 </div>
             </div>
         );
