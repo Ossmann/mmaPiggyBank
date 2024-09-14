@@ -81,6 +81,17 @@ body {
 
 }
 
+/* Specific styles for the current fight card */
+.scroll-item.current {
+  box-shadow: 0 0 18px rgba(107, 199, 204, 1); /* Blue glow */
+  border: solid 2px rgba(165, 244, 249, 1); /* Turquoise bottom border */
+  
+  text-shadow: 
+    0 0 8px rgba(165, 244, 249, 0.8),
+    0 1px 0 rgba(165, 244, 249, 1),   
+    1px 0 0 rgba(107, 199, 204, 1);
+}
+
 .scroll-item:hover {
   transform: scale(1.2); /* Scale effect on hover */
   border: 3px solid rgb(236, 234, 255, 0.3);
