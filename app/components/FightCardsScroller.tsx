@@ -99,7 +99,7 @@ export default function FightCardsScroller() {
         <div className="scroll-container">
           {fightCards.map((fightCard) => (
             <div
-              className={`scroll-item ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''} ${fightCard.fight_card_id === 7 ? 'current' : ''}`} // Apply the 'current' class if fight_card_id is 7
+              className={`scroll-item ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''} ${fightCard.fight_card_id === 8 ? 'current' : ''}`} // Apply the 'current' class if fight_card_id is 7
               key={fightCard.fight_card_id}
               onClick={() => setSelectedFightCardId(fightCard.fight_card_id)}  // Update the selected fight card ID when clicked
             >
@@ -110,7 +110,7 @@ export default function FightCardsScroller() {
 
         {/* Show the fighter with currently the most votes if the event is past */}
         {
-          cardNameDate && cardNameDate.date && new Date(cardNameDate.date).getTime() + 80200000 < new Date().getTime() && (
+          cardNameDate && cardNameDate.date && new Date(cardNameDate.date).getTime() + 20200000 < new Date().getTime() && (
             <div className="flex justify-center items-center">
               <VoteLeader leaderData={leaderData} />
             </div>
