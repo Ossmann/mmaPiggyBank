@@ -99,7 +99,7 @@ export default function FightCardsScroller() {
         <div className="scroll-container">
           {fightCards.map((fightCard) => (
             <div
-              className={`scroll-item ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''} ${fightCard.fight_card_id === 8 ? 'current' : ''}`} // Apply the 'current' class if fight_card_id is 7
+              className={`scroll-item ${selectedFightCardId === fightCard.fight_card_id ? 'selected' : ''} ${fightCard.fight_card_id === 9 ? 'current' : ''}`} // Apply the 'current' class if fight_card_id is 7
               key={fightCard.fight_card_id}
               onClick={() => setSelectedFightCardId(fightCard.fight_card_id)}  // Update the selected fight card ID when clicked
             >
