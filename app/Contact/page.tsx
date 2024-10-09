@@ -4,7 +4,7 @@ export default function Contact() {
     return (
         <div className="p-10">
             <div>
-                Disclaimer: I am not The MMA Guru, and this website is not affiliated with or endorsed by him. This site is a fan project and is not intended to impersonate or misrepresent The MMA Guru in any way.
+                Disclaimer: This site is a fan project and is not intended to impersonate or misrepresent any MMA organisation.
             </div>
             <div>
                 Contact: office@softwaresuccess.com.au
