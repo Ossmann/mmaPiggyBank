@@ -9,9 +9,7 @@ const barlowCondensed = Barlow_Condensed({
     return (
     <div className={`${barlowCondensed.className} font-barlowCondensed text-3xl md:text-6xl font-bold mb-4`}>
             <div className="flex justify-center items-center space-x-2">
-                <div className="glow-text-purple">THE</div>
-                <div className="glow-text-turquoise">MMA</div>
-                <div className="glow-text-purple">GURU</div>
+                <div className="glow-text-turquoise">The MMA</div>
             </div>
             <div className="glow-text-purple mt-2">PiggyBank</div>
       </div>
