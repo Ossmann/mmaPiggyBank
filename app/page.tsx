@@ -11,9 +11,6 @@ export default function Home() {
         id="home"
         className="relative h-screen w-screen flex flex-col justify-center items-center text-center space-y-10 px-8 overflow-hidden"
       >
-        {/* <div className='absolute text-xs bg-gray-400 p-2 rounded-md border-solid border-2 border-gray-600 top-8 left-8'>
-          Under construction
-        </div> */}
 
         <div className='hidden sm:block'>
 
